@@ -1,4 +1,4 @@
-from untils.date import nowtostr
+from date import nowtostr
 
 class Praticien:
     def __init__(self, id, nom, prenom, sexe, email, password, created_at=nowtostr(), updated_at=nowtostr()) -> None:

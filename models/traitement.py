@@ -1,4 +1,4 @@
-from untils.date import nowtostr
+from date import nowtostr
 
 class Traitement:
     def __init__(self, id, libelle, description, created_at=nowtostr(), updated_at=nowtostr()) -> None:
@@ -9,4 +9,4 @@ class Traitement:
         self.created_at = created_at
         self.updated_at = updated_at
 
-        self.maladies: list()
+        self.maladies = list()
