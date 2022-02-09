@@ -44,6 +44,7 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = Patient(item['id'], item['nom'], item['prenom'], item['sexe'], item['date_naissance'], item['groupSanguin'], item['created_at'], item['updated_at'])
+            data.set_consultations(item['consultations'])
             elements.append(data)
         return elements
 
@@ -52,6 +53,8 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = Maladie(item['id'], item['libelle'], item['description'], item['created_at'], item['updated_at'])
+            data.set_simptomes(item['simptomes'])
+            data.set_traitements(item['traitements'])
             elements.append(data)
         return elements
 
@@ -60,6 +63,7 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = Traitement(item['id'], item['libelle'], item['description'], item['created_at'], item['updated_at'])
+            data.set_maladies(item['maladies'])
             elements.append(data)
         return elements
 
@@ -68,6 +72,7 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = Symptome(item['id'], item['libelle'], item['description'], item['created_at'], item['updated_at'])
+            data.set_maladies(item['maladies'])
             elements.append(data)
         return elements
 
@@ -76,6 +81,7 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = TypeConsultation(item['id'], item['libelle'], item['created_at'], item['updated_at'])
+            data.set_consultations(item['consultations'])
             elements.append(data)
         return elements
 
@@ -84,6 +90,8 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = Consultation(item['id'], item['observation'], item['created_at'], item['updated_at'])
+            data.set_simptomes(item['simptomes'])
+            data.foreign(item['type_id'], item['patient_id'], item['praticien_id'], item['precedente_id'])
             elements.append(data)
         return elements
 
@@ -92,9 +100,10 @@ class Serialize:
         elements = list()
         for item in elements_data:
             data = ConsultationMaladie(item['id'], item['debut_traitement'], item['fin_traitement'], item['traitement_reussi'], item['created_at'], item['updated_at'])
+            data.set_simptomes(item['simptomes'])
+            data.foreign(item['consultation_id'], item['maladie_id'], item['traitement_id'])
             elements.append(data)
         return elements
-
 
 class Deserialize:
     def __init__(self):

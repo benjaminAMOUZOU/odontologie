@@ -16,6 +16,9 @@ class Consultation:
 
         self.simptomes = list()
 
+    def set_simptomes(self, elements):
+        self.simptomes = elements
+
     def foreign(self, type_id, patient_id, praticien_id, precedente_id=None):
         self.type_id = type_id
         self.patient_id = patient_id
@@ -24,3 +27,7 @@ class Consultation:
 
     def __str__(self):
         return "{}".format(json.dumps(self.__dict__, indent=4))
+
+    """def __eq__(self, o: object) -> bool:
+        return super().__eq__(o)"""
+

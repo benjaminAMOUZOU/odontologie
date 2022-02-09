@@ -13,5 +13,11 @@ class Maladie:
         self.symptomes = list()
         self.traitements = list()
 
+    def set_simptomes(self, elements):
+        self.simptomes = elements
+
+    def set_traitements(self, elements):
+        self.traitements = elements
+
     def __str__(self):
         return "{}".format(json.dumps(self.__dict__, indent=4))

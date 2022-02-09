@@ -17,6 +17,9 @@ class ConsultationMaladie:
 
         self.simptomes = list()
 
+    def set_simptomes(self, elements):
+        self.simptomes = elements
+
     def foreign(self, consultation_id, maladie_id, traitement_id):
         self.consultation_id = consultation_id
         self.maladie_id = maladie_id

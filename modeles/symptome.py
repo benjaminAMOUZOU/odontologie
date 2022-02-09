@@ -12,5 +12,8 @@ class Symptome:
 
         self.maladies = list()
 
+    def set_maladies(self, elements):
+        self.maladies = elements
+
     def __str__(self):
         return "{}".format(json.dumps(self.__dict__, indent=4))

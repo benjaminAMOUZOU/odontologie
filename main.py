@@ -10,8 +10,6 @@ from console.saisie import saisieMaladie
 from console.saisie import saisieConsultation
 from console.menu import affichage
 from console.data import *
-from structs.read import Serialize
-from modeles import *
 
 print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
