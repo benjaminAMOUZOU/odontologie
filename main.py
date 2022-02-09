@@ -9,7 +9,8 @@ from console.saisie import fichier
 from console.saisie import saisieMaladie
 from console.saisie import saisieConsultation
 from console.menu import affichage
-from console.data import *
+from structs.service_data import ServiceData
+from modeles import *
 
 print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
@@ -32,7 +33,7 @@ def main():#La définition de la fonction est utile pour la récursivité
 
         if maladie == 1:
             #Saisie nouvelle maladie
-            saisieMaladie()
+            saisie_maladie()
 
             #Relancement du programme
             main()
@@ -40,8 +41,8 @@ def main():#La définition de la fonction est utile pour la récursivité
             #Liste des maladies existantes
             print("\nListe des maladies existantes")
             print("-----------------------------\n")
-            if len(MALADIES) > 0:
-                for maladie in MALADIES:
+            if len(service.MALADIES) > 0:
+                for maladie in service.MALADIES:
                     print(maladie)#Rédéfinir la méthode correspondante dans la classe Maladie
             else:
                 print("Aucune maladie enrégistrée !\n")
@@ -56,7 +57,7 @@ def main():#La définition de la fonction est utile pour la récursivité
         consultation = clavier([1, 2])
 
         if(consultation == 1):
-            saisieConsultation()
+            saisie_consultation()
             main()
         else:
             pass
@@ -69,15 +70,4 @@ def main():#La définition de la fonction est utile pour la récursivité
 
 
 #Lancement du programme
-#main()
-
-"""s = Serialize()
-for item in s.get_praticiens():
-    print(item)
-print(s.get_patients())
-print(s.get_maladies())
-print(s.get_symptomes())
-print(s.get_traitements())
-print(s.get_consultations())
-print(s.get_type_consultations())
-print(s.get_consultation_maladie())"""
+main()
