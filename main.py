@@ -4,12 +4,14 @@ __author__ = "Benjamin AMOUZOU"
 __createAt__ = "07/02/2022"
 __updateAt__ = "09/02/2022"
 
-from saisie import clavier
-from saisie import fichier
-from saisie import saisieMaladie
-from saisie import saisieConsultation
-from menu import affichage
-from data import *
+from console.saisie import clavier
+from console.saisie import fichier
+from console.saisie import saisieMaladie
+from console.saisie import saisieConsultation
+from console.menu import affichage
+from console.data import *
+from structs.read import Serialize
+from modeles import *
 
 print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
@@ -69,4 +71,15 @@ def main():#La définition de la fonction est utile pour la récursivité
 
 
 #Lancement du programme
-main()
+#main()
+
+"""s = Serialize()
+for item in s.get_praticiens():
+    print(item)
+print(s.get_patients())
+print(s.get_maladies())
+print(s.get_symptomes())
+print(s.get_traitements())
+print(s.get_consultations())
+print(s.get_type_consultations())
+print(s.get_consultation_maladie())"""

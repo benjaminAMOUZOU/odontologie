@@ -1,4 +1,5 @@
-from date import nowtostr
+from untils.date import nowtostr
+import json
 
 class Consultation:
     def __init__(self, id, observation, created_at=nowtostr(), updated_at=nowtostr()) -> None:
@@ -20,3 +21,6 @@ class Consultation:
         self.patient_id = patient_id
         self.praticien_id = praticien_id
         self.precedente_id = precedente_id
+
+    def __str__(self):
+        return "{}".format(json.dumps(self.__dict__, indent=4))

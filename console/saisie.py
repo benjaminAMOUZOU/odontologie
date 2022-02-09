@@ -4,10 +4,9 @@ __author__ = "Benjamin AMOUZOU"
 __createAt__ = "07/02/2022"
 __updateAt__ = "09/02/2022"
 
-from models.maladie import Maladie
-from models.symptome import Symptome
-from menu import affichage
-from data import MALADIES
+from modeles.maladie import Maladie
+from modeles.symptome import Symptome
+from console.data import MALADIES
 
 #Fonction recupérant le choix d'un utilisateur en antier
 def clavier(valeurs):

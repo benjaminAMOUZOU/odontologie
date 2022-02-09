@@ -1,4 +1,5 @@
-from models.date import nowtostr
+from untils.date import nowtostr
+import json
 
 class Personne:
     def __init__(self, id, nom, prenom, sexe, created_at=nowtostr(), updated_at=nowtostr()) -> None:
@@ -9,3 +10,6 @@ class Personne:
 
         self.created_at = created_at
         self.updated_at = updated_at
+
+    def __str__(self):
+        return "{}".format(json.dumps(self.__dict__, indent=4))

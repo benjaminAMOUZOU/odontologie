@@ -1,1 +1,8 @@
+__pycache__/
+.idea/
 odontologie_venv/
+modeles/__pycache__/
+configs/__pycache__/
+structs/__pycache__/
+console/__pycache__/
+untils/__pycache__/
