@@ -1,15 +1,12 @@
-from date import nowtostr
+from models.date import nowtostr
+from models.personne import Personne
 
-class Patient:
-    def __init__(self, id, nom, prenom, sexe, date_naissance, groupSanguin, created_at=nowtostr(), updated_at=nowtostr()) -> None:
-        self.id = id
-        self.nom = nom
-        self.prenom = prenom
-        self.sexe = sexe
+class Patient(Personne):
+    def __init__(self, id, nom, prenom, sexe, date_naissance, group_sanguin) -> None:
+
+        Personne.__init__(self, id, nom, prenom, sexe)
+
         self.date_naissance = date_naissance
-        self.groupSanguin = groupSanguin
-
-        self.created_at = created_at
-        self.updated_at = updated_at
+        self.group_sanguin = group_sanguin
 
         self.consultations = list()

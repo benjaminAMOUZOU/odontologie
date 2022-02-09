@@ -2,10 +2,11 @@
 
 __author__ = "Benjamin AMOUZOU"
 __createAt__ = "07/02/2022"
-__updateAt__ = "08/02/2022"
+__updateAt__ = "09/02/2022"
 
-from maladie import Maladie
-from symptome import Symptome
+from models.maladie import Maladie
+from models.symptome import Symptome
+from menu import affichage
 from data import MALADIES
 
 #Fonction recupérant le choix d'un utilisateur en antier
@@ -30,7 +31,10 @@ def saisieMaladie():
         symptomes = []
 
         #Information de base d'une maladie
-        libelle = input("\nQuel est le libellé de la maladie: ")
+        while True:
+            libelle = input("\nQuel est le libellé de la maladie: ")
+            if len(libelle) > 0:
+                break
         description = input("\nVeuillez entrer une description pour maladie " + libelle + ": ")
 
         #Saisie des symptomes d'une maladie
@@ -39,7 +43,10 @@ def saisieMaladie():
             nbreSymptome = len(symptomes) + 1
             print("\nSymptome {}".format(nbreSymptome))
 
-            lib = input("Libellé: ")
+            while True:#Libellé non null, description oui
+                lib = input("Libellé: ")
+                if len(lib) > 0:
+                    break
             des = input("Description: ")
             symptomes.append({"libelle": lib, "description": des})
 
@@ -68,3 +75,8 @@ def saisieMaladie():
         rep = input("\nAutre maladie(o/n): ")
         if rep == 'n':
             break
+
+#Fonction pour la saisie en console d'une consultation
+def saisieConsultation():
+    #
+    print("")

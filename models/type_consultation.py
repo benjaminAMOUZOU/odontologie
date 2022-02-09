@@ -1,6 +1,6 @@
 from date import nowtostr
 
-class ConsultationType:
+class TypeConsultation:
     def __init__(self, id, libelle, created_at=nowtostr(), updated_at=nowtostr()) -> None:
         self.id = id
         self.libelle = libelle

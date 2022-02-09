@@ -2,11 +2,12 @@
 
 __author__ = "Benjamin AMOUZOU"
 __createAt__ = "07/02/2022"
-__updateAt__ = "08/02/2022"
+__updateAt__ = "09/02/2022"
 
 from saisie import clavier
 from saisie import fichier
 from saisie import saisieMaladie
+from saisie import saisieConsultation
 from menu import affichage
 from data import *
 
@@ -54,9 +55,15 @@ def main():#La définition de la fonction est utile pour la récursivité
         # Saisie clavier
         consultation = clavier([1, 2])
 
-    elif principal == 4:
+        if(consultation == 1):
+            saisieConsultation()
+            main()
+        else:
+            pass
+    elif principal == 3:
         # Choix du fichier
         url = fichier()
+        main()
     else:
         print("\nBye")
 

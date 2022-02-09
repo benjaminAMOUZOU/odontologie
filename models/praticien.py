@@ -1,12 +1,10 @@
-from date import nowtostr
+from models.date import nowtostr
+from models.personne import Personne
 
-class Praticien:
-    def __init__(self, id, nom, prenom, sexe, email, password, created_at=nowtostr(), updated_at=nowtostr()) -> None:
-        self.id = id
-        self.nom = nom
-        self.prenom = prenom
-        self.sexe = sexe
+class Praticien(Personne):
+    def __init__(self, id, nom, prenom, sexe, email, password) -> None:
+
+        Personne.__init__(self, id, nom, prenom, sexe)
+
         self.email = email
         self.password = password
-        self.created_at = created_at
-        self.updated_at = updated_at

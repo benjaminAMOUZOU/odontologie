@@ -1,4 +1,4 @@
-from date import nowtostr
+from models.date import nowtostr
 
 class Symptome:
     def __init__(self, id, libelle, description, created_at=nowtostr(), updated_at=nowtostr()) -> None:
