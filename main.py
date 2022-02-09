@@ -6,8 +6,8 @@ __updateAt__ = "09/02/2022"
 
 from console.saisie import clavier
 from console.saisie import fichier
-from console.saisie import saisieMaladie
-from console.saisie import saisieConsultation
+from console.saisie import saisie_maladie
+from console.saisie import saisie_consultation
 from console.menu import affichage
 from console.data import *
 from structs.read import Serialize
@@ -34,7 +34,7 @@ def main():#La définition de la fonction est utile pour la récursivité
 
         if maladie == 1:
             #Saisie nouvelle maladie
-            saisieMaladie()
+            saisie_maladie()
 
             #Relancement du programme
             main()
@@ -58,7 +58,7 @@ def main():#La définition de la fonction est utile pour la récursivité
         consultation = clavier([1, 2])
 
         if(consultation == 1):
-            saisieConsultation()
+            saisie_consultation()
             main()
         else:
             pass
@@ -71,15 +71,4 @@ def main():#La définition de la fonction est utile pour la récursivité
 
 
 #Lancement du programme
-#main()
-
-"""s = Serialize()
-for item in s.get_praticiens():
-    print(item)
-print(s.get_patients())
-print(s.get_maladies())
-print(s.get_symptomes())
-print(s.get_traitements())
-print(s.get_consultations())
-print(s.get_type_consultations())
-print(s.get_consultation_maladie())"""
+main()

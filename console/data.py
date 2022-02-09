@@ -1,4 +1,4 @@
-"""Module Contenant les données globales"""
+"""Module Contenant les données globales en mémoire"""
 
 __author__ = "Benjamin AMOUZOU"
 __createAt__ = "08/02/2022"
@@ -8,7 +8,7 @@ MALADIES = []#Liste complète des maladies du programme
 PATIENTS = []#Liste complète des patients du programmes
 CONSULTATIONS = []#Liste complète des consultations du programme
 TYPE_CONSULTATIONS = []
-SYMPTOMES = []#Fastidieux niveau code et ihm, à repenser
-TRAITEMENTS = []#Idem
+SYMPTOMES = []
+TRAITEMENTS = []
 PRATICIENS = []
 CONSULTATION_MALADIES = []
