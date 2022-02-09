@@ -14,7 +14,7 @@ class ConsultationMaladie:
         self.created_at = created_at
         self.updated_at = updated_at
 
-        self.simptomes: list()
+        self.simptomes = list()
 
     def foreign(self, consultation_id, maladie_id, traitement_id):
         self.consultation_id = consultation_id
