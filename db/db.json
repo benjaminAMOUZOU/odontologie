@@ -1,0 +1,43 @@
+{
+"praticiens":[
+  {
+    "id":"1",
+    "nom":"OFF",
+    "prenom":"jc",
+    "sexe":"M",
+    "email":"jc@gmail.com",
+    "password":"12345678",
+    "created_at": "09-02-2022 04:52",
+    "updated_at": "09-02-2022 04:52"
+  }
+],
+"patients":[
+  {
+    "id":"1",
+    "nom":"OFF",
+    "prenom":"jc",
+    "sexe":"M",
+    "date_naissance":"30-05-1995",
+    "groupSanguin":"O-",
+    "consultations":[],
+    "created_at": "09-02-2022 04:52",
+    "updated_at": "09-02-2022 04:52"
+  }
+],
+"maladies":[
+  {
+      "id":"1",
+      "libelle":"Carie",
+      "description":"Détruit les gents",
+      "simptomes":[],
+      "traitements":[],
+      "created_at": "09-02-2022 04:52",
+      "updated_at": "09-02-2022 04:52"
+  }
+],
+"traitements":[],
+"symptomes":[],
+"consultations_type":[],
+"consultations":[],
+"consultation_maladie":[]
+}

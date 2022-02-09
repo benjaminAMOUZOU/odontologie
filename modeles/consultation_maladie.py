@@ -1,4 +1,5 @@
 from untils.date import nowtostr
+import json
 
 class ConsultationMaladie:
     def __init__(self, id, debut_traitement, fin_traitement, traitement_reussi=False, created_at=nowtostr(), updated_at=nowtostr()) -> None:
@@ -14,9 +15,12 @@ class ConsultationMaladie:
         self.created_at = created_at
         self.updated_at = updated_at
 
-        self.simptomes: list()
+        self.simptomes = list()
 
     def foreign(self, consultation_id, maladie_id, traitement_id):
         self.consultation_id = consultation_id
         self.maladie_id = maladie_id
         self.traitement_id = traitement_id
+
+    def __str__(self):
+        return "{}".format(json.dumps(self.__dict__, indent=4))

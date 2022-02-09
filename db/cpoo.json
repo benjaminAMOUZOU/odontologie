@@ -1,0 +1,10 @@
+{
+"praticiens":[],
+"patients":[],
+"maladies":[],
+"traitements":[],
+"simptomes":[],
+"consultations_type":[],
+"consultations":[],
+"consultation_maladie":[]
+}
