@@ -1,6 +1,7 @@
+from structs.service_data import ServiceData
 from modeles import *
 
-symptomes = []
+service = ServiceData.get_instance()
 
 class ConsultationController:
     def __init__(self):

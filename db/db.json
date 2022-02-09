@@ -1,43 +1,61 @@
 {
-"praticiens":[
-  {
-    "id":"1",
-    "nom":"OFF",
-    "prenom":"jc",
-    "sexe":"M",
-    "email":"jc@gmail.com",
-    "password":"12345678",
-    "created_at": "09-02-2022 04:52",
-    "updated_at": "09-02-2022 04:52"
-  }
-],
-"patients":[
-  {
-    "id":"1",
-    "nom":"OFF",
-    "prenom":"jc",
-    "sexe":"M",
-    "date_naissance":"30-05-1995",
-    "groupSanguin":"O-",
-    "consultations":[],
-    "created_at": "09-02-2022 04:52",
-    "updated_at": "09-02-2022 04:52"
-  }
-],
-"maladies":[
-  {
-      "id":"1",
-      "libelle":"Carie",
-      "description":"Détruit les dents",
-      "simptomes":[],
-      "traitements":[],
-      "created_at": "09-02-2022 04:52",
-      "updated_at": "09-02-2022 04:52"
-  }
-],
-"traitements":[],
-"symptomes":[],
-"consultations_type":[],
-"consultations":[],
-"consultation_maladie":[]
+    "praticiens": [],
+    "patients": [],
+    "maladies": [
+        {
+            "id": 1,
+            "libelle": "Carie",
+            "description": "",
+            "created_at": "09-02-2022 14:50:34",
+            "updated_at": "09-02-2022 14:50:34",
+            "symptomes": [
+                1
+            ],
+            "traitements": []
+        },
+        {
+            "id": 2,
+            "libelle": "Maladie 2",
+            "description": "Description 2",
+            "created_at": "09-02-2022 14:57:01",
+            "updated_at": "09-02-2022 14:57:01",
+            "symptomes": [
+                2
+            ],
+            "traitements": [
+                1
+            ]
+        }
+    ],
+    "traitements": [
+        {
+            "id": 1,
+            "libelle": "Traitement 2",
+            "description": "",
+            "created_at": "09-02-2022 14:57:01",
+            "updated_at": "09-02-2022 14:57:01",
+            "maladies": []
+        }
+    ],
+    "symptomes": [
+        {
+            "id": 1,
+            "libelle": "Rougeur",
+            "description": "",
+            "created_at": "09-02-2022 14:50:34",
+            "updated_at": "09-02-2022 14:50:34",
+            "maladies": []
+        },
+        {
+            "id": 2,
+            "libelle": "Symptome 2",
+            "description": "",
+            "created_at": "09-02-2022 14:57:01",
+            "updated_at": "09-02-2022 14:57:01",
+            "maladies": []
+        }
+    ],
+    "consultations_type": [],
+    "consultations": [],
+    "consultation_maladie": []
 }

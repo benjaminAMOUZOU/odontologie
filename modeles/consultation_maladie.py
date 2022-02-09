@@ -15,10 +15,10 @@ class ConsultationMaladie:
         self.created_at = created_at
         self.updated_at = updated_at
 
-        self.simptomes = list()
+        self.symptomes = list()
 
     def set_simptomes(self, elements):
-        self.simptomes = elements
+        self.symptomes = elements
 
     def foreign(self, consultation_id, maladie_id, traitement_id):
         self.consultation_id = consultation_id
@@ -26,4 +26,7 @@ class ConsultationMaladie:
         self.traitement_id = traitement_id
 
     def __str__(self):
-        return "{}".format(json.dumps(self.__dict__, indent=4))
+        return json.dumps(self.__dict__, indent=4)
+
+    def to_json(self):
+        return json.dumps(self.__dict__, indent=4)

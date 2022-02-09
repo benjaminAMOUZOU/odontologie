@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Point d'entrée du programme"""
 
 __author__ = "Benjamin AMOUZOU"
@@ -6,8 +7,8 @@ __updateAt__ = "09/02/2022"
 
 from console.saisie import clavier
 from console.saisie import fichier
-from console.saisie import saisieMaladie
-from console.saisie import saisieConsultation
+from console.saisie import saisie_maladie
+from console.saisie import saisie_consultation
 from console.menu import affichage
 from structs.service_data import ServiceData
 from modeles import *
@@ -16,12 +17,15 @@ print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
 print("***********************************************")
 
+service = ServiceData.get_instance()
+
 def main():#La définition de la fonction est utile pour la récursivité
     """Avant de proposer le menu charger les donnees du fichier
     json dans les variables globales du module data"""
 
     #Menu principal
     affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
+    service.deserialize()
     #Saisie clavier
     principal = clavier([1, 2, 3, 4])
 
