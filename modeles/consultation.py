@@ -14,7 +14,10 @@ class Consultation:
         self.created_at = created_at
         self.updated_at = updated_at
 
-        self.simptomes = list()
+        self.symptomes = list()
+
+    def set_simptomes(self, elements):
+        self.symptomes = elements
 
     def foreign(self, type_id, patient_id, praticien_id, precedente_id=None):
         self.type_id = type_id
@@ -23,4 +26,11 @@ class Consultation:
         self.precedente_id = precedente_id
 
     def __str__(self):
-        return "{}".format(json.dumps(self.__dict__, indent=4))
+        return json.dumps(self.__dict__, indent=4)
+
+    def to_json(self):
+        return json.dumps(self.__dict__, indent=4)
+
+    """def __eq__(self, o: object) -> bool:
+        return super().__eq__(o)"""
+

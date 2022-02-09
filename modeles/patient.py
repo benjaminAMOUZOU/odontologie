@@ -12,5 +12,11 @@ class Patient(Personne):
 
         self.consultations = list()
 
+    def set_consultations(self, elements):
+        self.consultations = elements
+
     def __str__(self):
-        return "{}".format(json.dumps(self.__dict__, indent=4))
+        return json.dumps(self.__dict__, indent=4)
+
+    def to_json(self):
+        return json.dumps(self.__dict__, indent=4)

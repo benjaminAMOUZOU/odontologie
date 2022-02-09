@@ -1,0 +1,240 @@
+{
+    "praticiens": [
+        {
+            "id": 1,
+            "nom": "SODOKIN",
+            "prenom": "Beauty",
+            "sexe": "F",
+            "created_at": "09-02-2022 14:30",
+            "updated_at": "09-02-2022 14:30",
+            "email": "sodokinbeauty@gmail.com",
+            "password": "12345678"
+        }
+    ],
+    "patients": [
+        {
+            "id": 1,
+            "nom": "EDJAMTOLI",
+            "prenom": "Abid\u00e9 C\u00e9line",
+            "sexe": "F",
+            "created_at": "09-02-2022 14:30",
+            "updated_at": "09-02-2022 14:30",
+            "date_naissance": "30-05-1994",
+            "group_sanguin": "O+",
+            "consultations": [
+                1
+            ]
+        }
+    ],
+    "maladies": [
+        {
+            "id": 1,
+            "libelle": "Carie dentaire",
+            "description": "Pr\u00e9sence d'une cavit\u00e9 dans la dent",
+            "created_at": "09-02-2022 04:52",
+            "updated_at": "09-02-2022 04:52",
+            "symptomes": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "traitements": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 2,
+            "libelle": "D\u00e9chaussement de la dent",
+            "description": "R\u00e9tractation des gencives par rapport aux dents conduisant \u00e0 exposer les racines sous-jacentes",
+            "created_at": "09-02-2022 04:52",
+            "updated_at": "09-02-2022 04:52",
+            "symptomes": [
+                5,
+                6,
+                7
+            ],
+            "traitements": [
+                3,
+                4
+            ]
+        },
+        {
+            "id": 3,
+            "libelle": "Vou",
+            "description": "",
+            "created_at": "09-02-2022 15:53:08",
+            "updated_at": "09-02-2022 15:53:08",
+            "symptomes": [
+                8
+            ],
+            "traitements": []
+        }
+    ],
+    "traitements": [
+        {
+            "id": 1,
+            "libelle": "Obturation au moyen d'un composite ou d'un amalgame d'argent",
+            "description": "Uniquement si la carie touche seulement l'\u00e9mail ou la dentine",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 2,
+            "libelle": "D\u00e9vitaliser la dent,",
+            "description": "Uniquement si le nerf est atteint",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 3,
+            "libelle": "Nettoyage en profondeur de la r\u00e9gion affect\u00e9e",
+            "description": "",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "maladies": [
+                2
+            ]
+        },
+        {
+            "id": 4,
+            "libelle": "Nettoyage en profondeur de la r\u00e9gion affect\u00e9e",
+            "description": "",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "maladies": [
+                2
+            ]
+        }
+    ],
+    "symptomes": [
+        {
+            "id": 1,
+            "libelle": "Rougeur de la gencive",
+            "description": "",
+            "created_at": "09-02-2022 04:52",
+            "updated_at": "09-02-2022 04:52",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 2,
+            "libelle": "Enflure de la gencive ou de la joue",
+            "description": "",
+            "created_at": "09-02-2022 04:53",
+            "updated_at": "09-02-2022 04:53",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 3,
+            "libelle": "Douleur lors de la mastication",
+            "description": "",
+            "created_at": "09-02-2022 04:54",
+            "updated_at": "09-02-2022 04:54",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 4,
+            "libelle": "Maux de t\u00eate",
+            "description": "",
+            "created_at": "09-02-2022 04:55",
+            "updated_at": "09-02-2022 04:55",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 5,
+            "libelle": "Une sensibilit\u00e9 accrue des dents au contact du chaud et du froid",
+            "description": "",
+            "created_at": "09-02-2022 04:54",
+            "updated_at": "09-02-2022 04:54",
+            "maladies": [
+                2
+            ]
+        },
+        {
+            "id": 6,
+            "libelle": "Une sensation d'allongement de votre dent",
+            "description": "",
+            "created_at": "09-02-2022 04:55",
+            "updated_at": "09-02-2022 04:55",
+            "maladies": [
+                2
+            ]
+        },
+        {
+            "id": 7,
+            "libelle": "Un saignement anormal de vos gencives lors du brossage des dents",
+            "description": "",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "maladies": [
+                2
+            ]
+        },
+        {
+            "id": 8,
+            "libelle": "Test1",
+            "description": "",
+            "created_at": "09-02-2022 15:53:08",
+            "updated_at": "09-02-2022 15:53:08",
+            "maladies": []
+        }
+    ],
+    "consultations_type": [
+        {
+            "id": 1,
+            "libelle": "Normal",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "consultations": []
+        },
+        {
+            "id": 2,
+            "libelle": "Revisite",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "consultations": []
+        }
+    ],
+    "consultations": [
+        {
+            "id": 1,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 1,
+            "praticien_id": 1,
+            "precedente_id": null,
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "symptomes": []
+        }
+    ],
+    "consultation_maladie": [
+        {
+            "id": 1,
+            "debut_traitement": "09-02-2022",
+            "fin_traitement": "09-02-2022",
+            "traitement_reussi": true,
+            "consultation_id": 1,
+            "maladie_id": 1,
+            "traitement_id": 1,
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "symptomes": []
+        }
+    ]
+}
