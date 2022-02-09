@@ -9,13 +9,14 @@ from console.saisie import fichier
 from console.saisie import saisie_maladie
 from console.saisie import saisie_consultation
 from console.menu import affichage
-from console.data import *
-from structs.read import Serialize
+from structs.service_data import ServiceData
 from modeles import *
 
 print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
 print("***********************************************")
+
+service = ServiceData.get_instance()
 
 def main():#La définition de la fonction est utile pour la récursivité
     """Avant de proposer le menu charger les donnees du fichier
@@ -42,8 +43,8 @@ def main():#La définition de la fonction est utile pour la récursivité
             #Liste des maladies existantes
             print("\nListe des maladies existantes")
             print("-----------------------------\n")
-            if len(MALADIES) > 0:
-                for maladie in MALADIES:
+            if len(service.MALADIES) > 0:
+                for maladie in service.MALADIES:
                     print(maladie)#Rédéfinir la méthode correspondante dans la classe Maladie
             else:
                 print("Aucune maladie enrégistrée !\n")
