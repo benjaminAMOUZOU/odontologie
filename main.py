@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Point d'entrée du programme"""
 
 __author__ = "Benjamin AMOUZOU"
@@ -6,16 +7,17 @@ __updateAt__ = "09/02/2022"
 
 from console.saisie import clavier
 from console.saisie import fichier
-from console.saisie import saisieMaladie
-from console.saisie import saisieConsultation
+from console.saisie import saisie_maladie
+from console.saisie import saisie_consultation
 from console.menu import affichage
-from console.data import *
-from structs.read import Serialize
+from structs.service_data import ServiceData
 from modeles import *
 
 print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
 print("***********************************************")
+
+service = ServiceData.get_instance()
 
 def main():#La définition de la fonction est utile pour la récursivité
     """Avant de proposer le menu charger les donnees du fichier
@@ -23,6 +25,7 @@ def main():#La définition de la fonction est utile pour la récursivité
 
     #Menu principal
     affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
+    service.deserialize()
     #Saisie clavier
     principal = clavier([1, 2, 3, 4])
 
@@ -34,7 +37,7 @@ def main():#La définition de la fonction est utile pour la récursivité
 
         if maladie == 1:
             #Saisie nouvelle maladie
-            saisieMaladie()
+            saisie_maladie()
 
             #Relancement du programme
             main()
@@ -42,8 +45,8 @@ def main():#La définition de la fonction est utile pour la récursivité
             #Liste des maladies existantes
             print("\nListe des maladies existantes")
             print("-----------------------------\n")
-            if len(MALADIES) > 0:
-                for maladie in MALADIES:
+            if len(service.MALADIES) > 0:
+                for maladie in service.MALADIES:
                     print(maladie)#Rédéfinir la méthode correspondante dans la classe Maladie
             else:
                 print("Aucune maladie enrégistrée !\n")
@@ -58,7 +61,7 @@ def main():#La définition de la fonction est utile pour la récursivité
         consultation = clavier([1, 2])
 
         if(consultation == 1):
-            saisieConsultation()
+            saisie_consultation()
             main()
         else:
             pass
@@ -71,15 +74,4 @@ def main():#La définition de la fonction est utile pour la récursivité
 
 
 #Lancement du programme
-#main()
-
-"""s = Serialize()
-for item in s.get_praticiens():
-    print(item)
-print(s.get_patients())
-print(s.get_maladies())
-print(s.get_symptomes())
-print(s.get_traitements())
-print(s.get_consultations())
-print(s.get_type_consultations())
-print(s.get_consultation_maladie())"""
+main()
