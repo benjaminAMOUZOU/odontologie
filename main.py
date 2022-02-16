@@ -17,11 +17,9 @@ print("\n***********************************************")
 print("Structuration des données: Cas de l'odontologie")
 print("***********************************************")
 
-service = ServiceData.get_instance()
+service = ServiceData.get_instance()#Charge les données du fichier db.json
 
 def main():#La définition de la fonction est utile pour la récursivité
-    """Avant de proposer le menu charger les donnees du fichier
-    json dans les variables globales du module data"""
 
     #Menu principal
     affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
@@ -55,16 +53,9 @@ def main():#La définition de la fonction est utile pour la récursivité
             main()
 
     elif principal == 2:
-        # Menu consultation
-        affichage(["1- Nouvelle consultation", "2- Consultations existantes"])
-        # Saisie clavier
-        consultation = clavier([1, 2])
+        saisie_consultation()
+        main()
 
-        if(consultation == 1):
-            saisie_consultation()
-            main()
-        else:
-            pass
     elif principal == 3:
         # Choix du fichier
         url = fichier()

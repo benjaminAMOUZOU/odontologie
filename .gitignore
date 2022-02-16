@@ -6,3 +6,4 @@ configs/__pycache__/
 structs/__pycache__/
 console/__pycache__/
 untils/__pycache__/
+db/test.json
