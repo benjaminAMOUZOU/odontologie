@@ -1,0 +1,48 @@
+{
+    "patients":[
+        {
+            "id":"long",
+            "nom":"String",
+            "date_naissance":"Date",
+            "sexe":"char",
+            "groupSanguin":"enum",
+            "created_at": "Date",
+            "updated_at": "Date",
+
+            "consultations": [
+                {
+                    "id":"long",
+                    "type": "string",
+                    "observation": "Text",
+                    "created_at": "Date",
+                    "updated_at": "Date",
+
+                    "maladies":[
+                        {
+                            "id":"long",
+                            "libelle":"String",
+                            "description":"Text",
+                            "debut_traitement": "Date",
+                            "fin_traitement": "Date",
+                            "traitement_reussi": "boolean",
+                            "created_at": "Date",
+                            "updated_at": "Date"
+                        }
+                    ],
+
+                    "simptomes":[
+                        {
+                            "id":"long",
+                            "libelle":"String",
+                            "description":"Text",
+                            "created_at": "Date",
+                            "updated_at": "Date"
+                        }
+                    ]
+
+                }
+            ]
+
+        }
+    ]
+}

@@ -25,7 +25,10 @@ def main():#La définition de la fonction est utile pour la récursivité
 
     #Menu principal
     affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
-    service.deserialize()
+
+    service.deserialize() # Ecriure du fichier a chaque fois qu'on reviens au menu
+    service.deserialize_output()
+
     #Saisie clavier
     principal = clavier([1, 2, 3, 4])
 
