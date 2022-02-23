@@ -22,24 +22,24 @@ service = ServiceData.get_instance()#Charge les données du fichier db.json
 def main():#La définition de la fonction est utile pour la récursivité
 
     #Menu principal
-    affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
+    affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier csv", "4- Quitter le programme"])
     service.deserialize()
     #Saisie clavier
     principal = clavier([1, 2, 3, 4])
 
-    if principal == 1:
+    if principal == 1:#Maladie
         # Menu maladie
         affichage(["1- Nouvelle maladie", "2- Maladies existantes"])
         # Saisie clavier
         maladie = clavier([1, 2])
 
-        if maladie == 1:
+        if maladie == 1:#Nouvelle maladie
             #Saisie nouvelle maladie
             saisie_maladie()
 
             #Relancement du programme
             main()
-        else:
+        else:#Maladies existantes
             #Liste des maladies existantes
             print("\nListe des maladies existantes")
             print("-----------------------------\n")
@@ -52,15 +52,15 @@ def main():#La définition de la fonction est utile pour la récursivité
             #Relancement du programme
             main()
 
-    elif principal == 2:
+    elif principal == 2:#Consultation
         saisie_consultation()
         main()
 
-    elif principal == 3:
+    elif principal == 3:#Fichier CSV
         # Choix du fichier
         url = fichier()
         main()
-    else:
+    else:#Exit
         print("\nBye")
 
 

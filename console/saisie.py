@@ -43,7 +43,7 @@ def saisie_maladie():
             libelle = input("\nQuel est le libellé de la maladie: ")
             if len(libelle) > 0:
                 break
-        description = input("\nVeuillez entrer une description pour maladie " + libelle + ": ")
+        description = input("\nVeuillez entrer une description pour la maladie " + libelle + "(Facultatif): ")
         #Fin saisie des informations atomiques d'une maladie
 
         #Saisie des symptomes d'une maladie
@@ -55,7 +55,7 @@ def saisie_maladie():
                 lib = input("Libellé: ")
                 if len(lib) > 0:
                     break
-            des = input("Description: ")
+            des = input("Description(Facultatif): ")
             symptomes.append({"libelle": lib, "description": des})
 
             rep = input("\nAutre symptome ? [o/n]: ")
@@ -143,6 +143,9 @@ def saisie_consultation():
         consultation.type_id = 1
         consultation.symptomes = saisie_symptome_patient(patient)
 
+        #Et de la consultation au patient
+        patient.consultations.append(consultation.id)
+
         #Maladie et MaladieTraitement                                                               =>=>=>=>=>=>=>=>=>=>
         # Affectation à la liste des consultations
         service.CONSULTATIONS.append(consultation)
@@ -170,26 +173,49 @@ def saisie_consultation():
 
             if type_consultation == 2:#Revisite
                 consultation.type_id = 2
-                date_consultation = input("\nQuelle était la date de la toute première consultation (dd-mm-aaaa) : ")
 
-                #recherche de l'identifiant de la première consultation puis affectation
-                for cons in service.CONSULTATIONS:
-                    if cons.patient_id == consultation.patient_id and consultation.created_at == date_consultation:
+                while True:
+                    date_consultation = input("\nQuelle était la date de la toute première consultation (dd-mm-aaaa) : ")
 
-                        consultation.precedente_id = cons.id
-                        #Saisie de l'observation pour la revisite
-                        consulation.observation = input("\nUne observation pour cette revisite : ")
-                        #Dire si le traitement est fini classe consultation_maladie                         =>=>=>=>=>=>=>=>=>=>
-                        service.CONSULTATIONS.append(consultation)
+                    #recherche de l'identifiant de la première consultation puis affectation
+                    consultation_precedente_trouve = False
+                    for cons in service.CONSULTATIONS:
+                        if cons.patient_id == consultation.patient_id and consultation.created_at.split(" ")[0] == date_consultation:
+                            consultation_precedente_trouve = True
+                            consultation.precedente_id = cons.id
+                            #Saisie de l'observation pour la revisite
+                            consultation.observation = input("\nUne observation pour cette revisite : ")
 
+                            #Affectation de la consultation à la liste des consultations du patient
+                            for index, patient in enumerate(service.PATIENTS):
+                                if patient.id == consultation.patient_id:
+                                    service.PATIENTS[index].consultations.append(consultation.id)
+                            #Maladie, ConsultationMaladie, Praticien                                =>=>=>=>=>=>=>=>=>=>
+                            service.CONSULTATIONS.append(consultation)
+                            break
+
+                    #Message d'erreur
+                    if not consultation_precedente_trouve:
+                        print("\nAucune correpondance pour la date {} !".format(date_consultation))
+
+                        # Reprise
+                        rep = input("\nSaisir à nouveau la date de la première consultation ? [o/n]: ")
+                        if rep == 'n':
+                            break
                     else:
-                        print("Aucune correpondance pour la date {} !".format(date_consultation))#Une redirection
+                        break
 
             else:#Consultation normale
                 consultation.type_id = 1
+                #Affectation de la nouvelle consultation à l'ancien patient
+                pat = {}
+                for index, patient in enumerate(service.PATIENTS):
+                    if patient.id == consultation.patient_id:
+                        pat = patient;
+                        service.PATIENTS[index].consultations.append(consultation.id)
                 #Saisie des nouveaux symptomes de  l'ancien patient
-                consultation.symptomes = saisie_symptome_patient()
-                #Maladie, ConsultationMaladie ?                                                     =>=>=>=>=>=>=>=>=>=>
+                consultation.symptomes = saisie_symptome_patient(pat)
+                #Maladie, ConsultationMaladie, Praticien                                            =>=>=>=>=>=>=>=>=>=>
                 service.CONSULTATIONS.append(consultation)
 #Fin fonction pour la saisie en console d'une consultation
 
@@ -268,9 +294,13 @@ def saisie_symptome_patient(patient):
                         if maladie.id == maladie_id:
                             service.MALADIES[index].symptomes.append(symptome.id)
 
+                    # Ajout du symptome à la liste globale des symptomes
+                    service.SYMPTOMES.append(symptome)
+                    symptomes.append(symptome.id)
+
                 else:#Nouvelle maladie pour ce symptome
                     maladie_libelle = input("\nQuelle est le libellé d'une maladie associée à ce symptome : ")
-                    maladie_description = input("\nQuelle est la description de la maladie {} associée à ce symptome[facultatif] : ".format(maladie_libelle))
+                    maladie_description = input("\nQuelle est la description de la maladie {} associée à ce symptome(facultatif) : ".format(maladie_libelle))
                     maladie_id = int(service.MALADIES[-1].id) + 1
 
                     #Création de la nouvelle maladie
@@ -290,6 +320,7 @@ def saisie_symptome_patient(patient):
 
                 #Création de la nouvelle maladie
                 maladie = Maladie(1, maladie_libelle, maladie_description)
+                maladie.symptomes.append(symptome.id)
                 service.MALADIES.append(maladie) #Ajout du symptome à la liste globale des maladies
                 symptome.maladies.append(1)
                 service.SYMPTOMES.append(symptome) #Ajout du symptome à la liste globale des symptomes
@@ -303,8 +334,3 @@ def saisie_symptome_patient(patient):
 
     return symptomes
 #Fin fonction pour la saisie des symtomes du patient
-
-
-"""
-    1- L'heure pose problème lors de la vérification de la correspondance par rapport à l'ancienne consultation
-"""
