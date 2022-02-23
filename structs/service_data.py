@@ -34,7 +34,7 @@ class ServiceData:
         for item in elements:
             if item.id == id:
                 return item
-            return None
+        return None
 
     def get_elements(self, ids, elements):
         results = []
@@ -90,6 +90,7 @@ class ServiceData:
         }
 
         for patient_item in self.PATIENTS:
+
             patient = {
                 "id": patient_item.id,
                 "nom": patient_item.nom,
@@ -103,7 +104,7 @@ class ServiceData:
             }
 
             consultations_patient = self.get_elements(patient_item.consultations, self.CONSULTATIONS)
-
+            print(self.CONSULTATIONS)
             for consultation_item in consultations_patient:
                 type = self.get_element(consultation_item.type_id, self.TYPE_CONSULTATIONS)
                 consultations = {

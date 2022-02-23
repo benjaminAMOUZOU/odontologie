@@ -90,19 +90,27 @@ class CsvParser:
             service.CONSULTATIONS.append(self.consultation)
             service.CONSULTATION_MALADIES.append(self.consultation_maladie)
 
+            try:
+                self.patient.consultations.append(self.consultation.id)
+                index = service.PATIENTS.index(self.patient)
+                service.service.PATIENTS[index] = self.patient
+            except:
+                pass
+
         elif base.type_consulation.upper() == "REVISITE":
 
             self.consultation = Consultation(self.next_id(service.CONSULTATIONS), base.observation, created_at=base.date_consultation)
+            self.consultation.patient_id = self.patient.id
             self.consultation.type_id = 2
 
             tmp_consultation = self.get_elements("patient_id", service.CONSULTATIONS, self.patient.id)
-            print(tmp_consultation)
+
             precedente = self.get_element("type_id", tmp_consultation, 1)
-            print(precedente)
+
             self.consultation.precedente_id = precedente.id
 
             consultation_maladie = self.get_element('consultation_id', service.CONSULTATION_MALADIES, precedente.id)
-            print(consultation_maladie)
+
 
             if consultation_maladie:
                 consultation_maladie.fin_traitement = base.date_fin_traitement
@@ -111,6 +119,13 @@ class CsvParser:
             try:
                 index = service.CONSULTATION_MALADIES.index(consultation_maladie)
                 service.CONSULTATION_MALADIES[index] = consultation_maladie
+            except:
+                pass
+
+            try:
+                self.patient.consultations.append(self.consultation.id)
+                index = service.PATIENTS.index(self.patient)
+                service.service.PATIENTS[index] = self.patient
             except:
                 pass
             service.CONSULTATIONS.append(self.consultation)
