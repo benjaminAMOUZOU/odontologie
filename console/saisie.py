@@ -124,7 +124,7 @@ def saisie_maladie():
 #Fin fonction pour la saisie en console d'une maladie
 
 #Fonction pour la saisie en console d'une consultation
-def saisie_consultation():
+def saisie_consultation(praticien_courant):
     affichage(["1- Nouveau patient", "2- Ancien patient"])
     rep = clavier([1, 2])
 
@@ -133,6 +133,7 @@ def saisie_consultation():
     if len(service.CONSULTATIONS) > 0:
         id = int(service.CONSULTATIONS[-1].id) + 1
     consultation = Consultation(id, "")
+    consultation.praticien_id = praticien_courant.id
 
     if rep == 1:#Nouveau patient
         #Saisie des informations du nouveau patient
