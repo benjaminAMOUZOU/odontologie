@@ -2,7 +2,7 @@ from untils.date import nowtostr
 import json
 
 class Consultation:
-    def __init__(self, id, observation, created_at=nowtostr(), updated_at=nowtostr()) -> None:
+    def __init__(self, id, observation='', created_at=nowtostr(), updated_at=nowtostr()) -> None:
         self.id = id
         self.observation = observation
 

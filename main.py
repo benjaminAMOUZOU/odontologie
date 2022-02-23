@@ -25,6 +25,15 @@ connecte = False;#Pour vérifier si le praticien est connecté
 
 def main(connecte,first_execution, praticien_courant):#La définition de la fonction est utile pour la récursivité
 
+    #Menu principal
+    affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
+
+    service.deserialize() # Ecriure du fichier a chaque fois qu'on reviens au menu
+    service.deserialize_output()
+
+    #Saisie clavier
+    principal = clavier([1, 2, 3, 4])
+
     if(first_execution):
         first_execution = False
         email = input("\nEmail: ")

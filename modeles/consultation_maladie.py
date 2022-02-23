@@ -1,7 +1,9 @@
 from untils.date import nowtostr
 import json
 
+
 class ConsultationMaladie:
+
     def __init__(self, id, debut_traitement, fin_traitement, traitement_reussi=False, created_at=nowtostr(), updated_at=nowtostr()) -> None:
         self.id = id
         self.debut_traitement = debut_traitement
