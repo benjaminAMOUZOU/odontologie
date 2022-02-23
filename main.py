@@ -11,6 +11,7 @@ from console.saisie import saisie_maladie
 from console.saisie import saisie_consultation
 from console.menu import affichage
 from structs.service_data import ServiceData
+from structs.csv_parser import CsvParser
 from modeles import *
 import getpass
 
@@ -97,6 +98,8 @@ def main(connecte,first_execution, praticien_courant):#La définition de la fonc
         elif principal == 3:#Fichier CSV
             # Choix du fichier
             url = fichier()
+            cp = CsvParser(url)
+            cp.run()
             main(connecte,first_execution, praticien_courant)
         else:#Exit
             print("\nBye")
