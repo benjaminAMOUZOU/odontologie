@@ -10,7 +10,7 @@
             "consultations": [
                 {
                     "id": 1,
-                    "type": "Normal",
+                    "type": "NORMAL",
                     "observation": "",
                     "created_at": "09-02-2022 04:56",
                     "updated_at": "09-02-2022 04:56",
@@ -31,6 +31,17 @@
             ],
             "created_at": "09-02-2022 14:30",
             "updated_at": "09-02-2022 14:30"
+        },
+        {
+            "id": 2,
+            "nom": "AMOUZOU",
+            "prenom": "Kokou Benjamin",
+            "sexe": "M",
+            "date_naissance": "9/6/00",
+            "group_sanguin": "O+",
+            "consultations": [],
+            "created_at": "23-02-2022 14:21:23",
+            "updated_at": "23-02-2022 14:21:23"
         }
     ]
 }
