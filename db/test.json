@@ -24,6 +24,21 @@
             "consultations": [
                 1
             ]
+        },
+        {
+            "id": 2,
+            "nom": "AMOUZOU",
+            "prenom": "Kokou Benjamin",
+            "sexe": "M",
+            "created_at": "23-02-2022 15:24:22",
+            "updated_at": "23-02-2022 15:24:22",
+            "date_naissance": "09/06/2000",
+            "group_sanguin": "O+",
+            "consultations": [
+                2,
+                3,
+                4
+            ]
         }
     ],
     "maladies": [
@@ -68,6 +83,17 @@
             "updated_at": "09-02-2022 15:53:08",
             "symptomes": [
                 8
+            ],
+            "traitements": []
+        },
+        {
+            "id": 4,
+            "libelle": "Gingivite",
+            "description": "",
+            "created_at": "23-02-2022 15:24:22",
+            "updated_at": "23-02-2022 15:24:22",
+            "symptomes": [
+                9
             ],
             "traitements": []
         }
@@ -192,6 +218,16 @@
             "created_at": "09-02-2022 15:53:08",
             "updated_at": "09-02-2022 15:53:08",
             "maladies": []
+        },
+        {
+            "id": 9,
+            "libelle": "Inflammation de la gencive",
+            "description": "",
+            "created_at": "23-02-2022 15:24:22",
+            "updated_at": "23-02-2022 15:24:22",
+            "maladies": [
+                4
+            ]
         }
     ],
     "consultations_type": [
@@ -221,6 +257,42 @@
             "created_at": "09-02-2022 04:56",
             "updated_at": "09-02-2022 04:56",
             "symptomes": []
+        },
+        {
+            "id": 2,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 2,
+            "praticien_id": 0,
+            "precedente_id": 0,
+            "created_at": "02/16/2022",
+            "updated_at": "23-02-2022 15:24:22",
+            "symptomes": [
+                4,
+                9
+            ]
+        },
+        {
+            "id": 3,
+            "observation": "Gingivite en regression",
+            "type_id": 2,
+            "patient_id": 2,
+            "praticien_id": 0,
+            "precedente_id": 2,
+            "created_at": "02/23/2022",
+            "updated_at": "23-02-2022 15:24:22",
+            "symptomes": []
+        },
+        {
+            "id": 4,
+            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+            "type_id": 2,
+            "patient_id": 2,
+            "praticien_id": 0,
+            "precedente_id": 2,
+            "created_at": "02/28/2022",
+            "updated_at": "23-02-2022 15:24:22",
+            "symptomes": []
         }
     ],
     "consultation_maladie": [
@@ -235,6 +307,21 @@
             "created_at": "09-02-2022 04:56",
             "updated_at": "09-02-2022 04:56",
             "symptomes": []
+        },
+        {
+            "id": 2,
+            "debut_traitement": "16/02/2022",
+            "fin_traitement": "02/28/22",
+            "traitement_reussi": "Oui",
+            "consultation_id": 2,
+            "maladie_id": 4,
+            "traitement_id": 0,
+            "created_at": "23-02-2022 15:24:22",
+            "updated_at": "23-02-2022 15:24:22",
+            "symptomes": [
+                4,
+                9
+            ]
         }
     ]
 }

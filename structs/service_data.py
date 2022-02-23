@@ -104,7 +104,6 @@ class ServiceData:
             }
 
             consultations_patient = self.get_elements(patient_item.consultations, self.CONSULTATIONS)
-            print(self.CONSULTATIONS)
             for consultation_item in consultations_patient:
                 type = self.get_element(consultation_item.type_id, self.TYPE_CONSULTATIONS)
                 consultations = {
