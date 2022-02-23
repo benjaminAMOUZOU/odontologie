@@ -33,7 +33,7 @@ def main(connecte,first_execution, praticien_courant):#La définition de la fonc
             #Création et affectation du praticien à praticien_courant
             praticien_courant = saisie_info_praticien(email)#Chiffrer le mot de passe plus tard
             service.PRATICIENS.append(praticien_courant)
-            print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courantprenom))
+            print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courant.prenom))
             connecte = True
         else:
             trouve = False
@@ -63,6 +63,8 @@ def main(connecte,first_execution, praticien_courant):#La définition de la fonc
         #Menu principal
         affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier csv", "4- Quitter le programme"])
         service.deserialize()
+        service.deserialize_output()
+
         #Saisie clavier
         principal = clavier([1, 2, 3, 4])
 
