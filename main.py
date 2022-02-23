@@ -25,15 +25,6 @@ connecte = False;#Pour vérifier si le praticien est connecté
 
 def main(connecte,first_execution, praticien_courant):#La définition de la fonction est utile pour la récursivité
 
-    #Menu principal
-    affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier xlsx", "4- Quitter le programme"])
-
-    service.deserialize() # Ecriure du fichier a chaque fois qu'on reviens au menu
-    service.deserialize_output()
-
-    #Saisie clavier
-    principal = clavier([1, 2, 3, 4])
-
     if(first_execution):
         first_execution = False
         email = input("\nEmail: ")
@@ -41,25 +32,30 @@ def main(connecte,first_execution, praticien_courant):#La définition de la fonc
             #Création et affectation du praticien à praticien_courant
             praticien_courant = saisie_info_praticien(email)#Chiffrer le mot de passe plus tard
             service.PRATICIENS.append(praticien_courant)
-            print("\nConnecté en tant que {} {} \n".format(praticien.nom, praticien.prenom))
+            print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courantprenom))
             connecte = True
         else:
             trouve = False
             #Récupération des informations de connexion du praticien
             for praticien in service.PRATICIENS:
                 if email == praticien.email:
-                    password = getpass.getpass("\nMot de passe: ")
-                    if(password == praticien.password):
-                        print("\nConnecté en tant que {} {} \n".format(praticien.nom, praticien.prenom))
-                        praticien_courant = praticien
-                        trouve = True
-                        connecte = True
-                        break
+                    while True:
+                        password = getpass.getpass("\nMot de passe: ")
+                        if(password == praticien.password):
+                            praticien_courant = praticien
+                            print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courant.prenom))
+                            trouve = True
+                            connecte = True
+                            break
+                        else:
+                            print("\nMot de passe incorrect !")
+                    break
+
             if(not trouve):#Adresse mail pas dans la liste
                 print("\nAdresse email n'ont présente dans le système !")
                 praticien_courant = saisie_info_praticien(email)  # Chiffrer le mot de passe plus tard
                 service.PRATICIENS.append(praticien_courant)
-                print("\nConnecté en tant que {} {} \n".format(praticien.nom, praticien.prenom))
+                print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courant.prenom))
                 connecte = True
 
     if(connecte):
