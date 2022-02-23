@@ -11,7 +11,7 @@ BASE_STRUCT={
 }
 
 FILE_PATH="db"
-FILE_NAME="test.json"
+FILE_NAME="db_cpoo.json"
 FILE=f"{FILE_PATH}/{FILE_NAME}"
 
 OUTPUT_FILE_PATH="output"
