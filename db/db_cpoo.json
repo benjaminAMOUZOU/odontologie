@@ -3,11 +3,11 @@
         {
             "id": 1,
             "nom": "OFF",
-            "prenom": "JC",
+            "prenom": "Jc",
             "sexe": "M",
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
-            "email": "offiramjc@gmail.com",
+            "created_at": "02-03-2022 13:01:29",
+            "updated_at": "02-03-2022 13:01:29",
+            "email": "offridamjc@gmail.com",
             "password": "12345678"
         }
     ],
@@ -17,8 +17,8 @@
             "nom": "AMOUZOU",
             "prenom": "Kokou Benjamin",
             "sexe": "M",
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
+            "created_at": "02-03-2022 13:02:26",
+            "updated_at": "02-03-2022 13:02:26",
             "date_naissance": "09/06/2000",
             "group_sanguin": "O+",
             "consultations": [
@@ -33,8 +33,8 @@
             "id": 1,
             "libelle": "Gingivite",
             "description": "",
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
+            "created_at": "02-03-2022 13:02:26",
+            "updated_at": "02-03-2022 13:02:26",
             "symptomes": [
                 1,
                 2
@@ -48,8 +48,8 @@
             "id": 1,
             "libelle": "Maux de t\u00eate",
             "description": "",
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
+            "created_at": "02-03-2022 13:02:26",
+            "updated_at": "02-03-2022 13:02:26",
             "maladies": [
                 1
             ]
@@ -58,14 +58,29 @@
             "id": 2,
             "libelle": "Inflammation de la gencive",
             "description": "",
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
+            "created_at": "02-03-2022 13:02:26",
+            "updated_at": "02-03-2022 13:02:26",
             "maladies": [
                 1
             ]
         }
     ],
-    "consultations_type": [],
+    "consultations_type": [
+        {
+            "id": 1,
+            "libelle": "NORMAL",
+            "created_at": "00-00-0000 00:00",
+            "updated_at": "00-00-0000 00:00",
+            "consultations": []
+        },
+        {
+            "id": 2,
+            "libelle": "REVISITE",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "consultations": []
+        }
+    ],
     "consultations": [
         {
             "id": 1,
@@ -75,7 +90,7 @@
             "praticien_id": 0,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "23-02-2022 17:09:28",
+            "updated_at": "02-03-2022 13:02:26",
             "symptomes": [
                 1,
                 2
@@ -89,7 +104,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "23-02-2022 17:09:28",
+            "updated_at": "02-03-2022 13:02:26",
             "symptomes": []
         },
         {
@@ -100,7 +115,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "23-02-2022 17:09:28",
+            "updated_at": "02-03-2022 13:02:26",
             "symptomes": []
         }
     ],
@@ -113,8 +128,8 @@
             "consultation_id": 1,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "23-02-2022 17:09:28",
-            "updated_at": "23-02-2022 17:09:28",
+            "created_at": "02-03-2022 13:02:26",
+            "updated_at": "02-03-2022 13:02:26",
             "symptomes": [
                 1,
                 2

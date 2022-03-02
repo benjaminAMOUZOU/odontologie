@@ -5,7 +5,22 @@ BASE_STRUCT={
     "maladies":[],
     "traitements":[],
     "symptomes":[],
-    "consultations_type":[],
+    "consultations_type":[
+        {
+            "id": 1,
+            "libelle": "NORMAL",
+            "created_at": "00-00-0000 00:00",
+            "updated_at": "00-00-0000 00:00",
+            "consultations": []
+        },
+        {
+            "id": 2,
+            "libelle": "REVISITE",
+            "created_at": "09-02-2022 04:56",
+            "updated_at": "09-02-2022 04:56",
+            "consultations": []
+        }
+    ],
     "consultations":[],
     "consultation_maladie":[]
 }
