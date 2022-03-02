@@ -38,16 +38,23 @@
         <!-- Page content-->
         <div class="container">
             <div class="row">
+                {% if message is defined %}
                 <div class="offset-lg-3 col-lg-6 mt-5 text-center">
                     <span class="{% if message is defined %}alert alert-success my-5{% endif %}">{{message}}</span>
                 </div>
+                {% endif %}
+
                <div class="offset-lg-3 col-lg-6 mt-5 text-center">
                     <h1>Sélectionnez un fichier csv</h1>
                     <form class="form" method="post" enctype="multipart/form-data" action="/upload">
                         <input type="file" name="file" class="form-control input-sm mt-3"/>
-                        <input type="submit" value="Envoyer le fichier" class="mt-3 btn btn-sm btn-secondary"/>
+                        <input type="submit" value="Envoyer le fichier" class="mt-3 mr-5 btn btn-sm btn-secondary"/>
+                        {% if message is defined %}
+                        <a href="../static/cpoo.json" class="mt-3 btn btn-sm btn-primary">Télécharger</a>
+                        {% endif %}
                     </form>
                 </div>
+
             </div>
         </div>
 

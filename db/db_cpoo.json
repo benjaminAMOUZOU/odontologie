@@ -6,8 +6,8 @@
             "nom": "AMOUZOU",
             "prenom": "Kokou Benjamin",
             "sexe": "M",
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:35:34",
+            "updated_at": "02-03-2022 16:35:34",
             "date_naissance": "09/06/2000",
             "group_sanguin": "O+",
             "consultations": [
@@ -28,8 +28,8 @@
             "id": 1,
             "libelle": "Gingivite",
             "description": "",
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:35:34",
+            "updated_at": "02-03-2022 16:35:34",
             "symptomes": [
                 1,
                 2
@@ -43,8 +43,8 @@
             "id": 1,
             "libelle": "Maux de t\u00eate",
             "description": "",
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:35:34",
+            "updated_at": "02-03-2022 16:35:34",
             "maladies": [
                 1
             ]
@@ -53,8 +53,8 @@
             "id": 2,
             "libelle": "Inflammation de la gencive",
             "description": "",
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:35:34",
+            "updated_at": "02-03-2022 16:35:34",
             "maladies": [
                 1
             ]
@@ -85,7 +85,7 @@
             "praticien_id": 0,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:35:34",
             "symptomes": [
                 1,
                 2
@@ -99,7 +99,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:35:34",
             "symptomes": []
         },
         {
@@ -110,7 +110,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:35:34",
             "symptomes": []
         },
         {
@@ -121,7 +121,7 @@
             "praticien_id": 0,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:36:08",
             "symptomes": [
                 1,
                 2
@@ -135,7 +135,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:36:08",
             "symptomes": []
         },
         {
@@ -146,7 +146,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:36:08",
             "symptomes": []
         },
         {
@@ -157,7 +157,7 @@
             "praticien_id": 0,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:37:32",
             "symptomes": [
                 1,
                 2
@@ -171,7 +171,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:37:32",
             "symptomes": []
         },
         {
@@ -182,7 +182,7 @@
             "praticien_id": 0,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:37:32",
             "symptomes": []
         }
     ],
@@ -195,8 +195,8 @@
             "consultation_id": 1,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:35:34",
+            "updated_at": "02-03-2022 16:35:34",
             "symptomes": [
                 1,
                 2
@@ -210,8 +210,8 @@
             "consultation_id": 4,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:36:08",
+            "updated_at": "02-03-2022 16:36:08",
             "symptomes": [
                 1,
                 2
@@ -225,8 +225,8 @@
             "consultation_id": 7,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "02-03-2022 16:14:15",
-            "updated_at": "02-03-2022 16:14:15",
+            "created_at": "02-03-2022 16:37:32",
+            "updated_at": "02-03-2022 16:37:32",
             "symptomes": [
                 1,
                 2
