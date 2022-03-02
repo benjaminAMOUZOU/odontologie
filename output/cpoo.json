@@ -60,6 +60,48 @@
                     "updated_at": "02-03-2022 13:02:26",
                     "maladies": [],
                     "symptomes": []
+                },
+                {
+                    "id": 4,
+                    "type": "NORMAL",
+                    "observation": "",
+                    "created_at": "02/16/2022",
+                    "updated_at": "02-03-2022 13:02:26",
+                    "maladies": [],
+                    "symptomes": [
+                        {
+                            "id": 1,
+                            "libelle": "Maux de t\u00eate",
+                            "description": "",
+                            "created_at": "02-03-2022 13:02:26",
+                            "updated_at": "02-03-2022 13:02:26"
+                        },
+                        {
+                            "id": 2,
+                            "libelle": "Inflammation de la gencive",
+                            "description": "",
+                            "created_at": "02-03-2022 13:02:26",
+                            "updated_at": "02-03-2022 13:02:26"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "type": "REVISITE",
+                    "observation": "Gingivite en regression",
+                    "created_at": "02/23/2022",
+                    "updated_at": "02-03-2022 13:02:26",
+                    "maladies": [],
+                    "symptomes": []
+                },
+                {
+                    "id": 6,
+                    "type": "REVISITE",
+                    "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+                    "created_at": "02/28/2022",
+                    "updated_at": "02-03-2022 13:02:26",
+                    "maladies": [],
+                    "symptomes": []
                 }
             ],
             "created_at": "02-03-2022 13:02:26",
