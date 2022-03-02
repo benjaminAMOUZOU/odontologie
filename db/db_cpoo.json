@@ -9,6 +9,16 @@
             "updated_at": "23-02-2022 17:09:28",
             "email": "offiramjc@gmail.com",
             "password": "12345678"
+        },
+        {
+            "id": 2,
+            "nom": "AMOUZOU",
+            "prenom": "Kokou Benjamin",
+            "sexe": "M",
+            "created_at": "23-02-2022 18:35:00",
+            "updated_at": "23-02-2022 18:35:00",
+            "email": "benkokouamouzou@gmail.com",
+            "password": "azeqsdwxc"
         }
     ],
     "patients": [
