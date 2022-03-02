@@ -3,3 +3,6 @@ pytz==2021.3
 zope.interface==5.4.0
 colored==1.4.3
 prettytable==3.1.1
+Flask==2.0.3
+Werkzeug==2.0.3
+Flask-Session==0.4.0

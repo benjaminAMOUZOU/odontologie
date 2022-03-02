@@ -1,6 +1,6 @@
 __pycache__/
 .idea/
-odontologie_venv/
+venv/
 modeles/__pycache__/
 configs/__pycache__/
 structs/__pycache__/
