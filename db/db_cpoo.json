@@ -1,9 +1,65 @@
 {
     "praticiens": [],
-    "patients": [],
-    "maladies": [],
+    "patients": [
+        {
+            "id": 1,
+            "nom": "AMOUZOU",
+            "prenom": "Kokou Benjamin",
+            "sexe": "M",
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "date_naissance": "09/06/2000",
+            "group_sanguin": "O+",
+            "consultations": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+            ]
+        }
+    ],
+    "maladies": [
+        {
+            "id": 1,
+            "libelle": "Gingivite",
+            "description": "",
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ],
+            "traitements": []
+        }
+    ],
     "traitements": [],
-    "symptomes": [],
+    "symptomes": [
+        {
+            "id": 1,
+            "libelle": "Maux de t\u00eate",
+            "description": "",
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "maladies": [
+                1
+            ]
+        },
+        {
+            "id": 2,
+            "libelle": "Inflammation de la gencive",
+            "description": "",
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "maladies": [
+                1
+            ]
+        }
+    ],
     "consultations_type": [
         {
             "id": 1,
@@ -20,6 +76,161 @@
             "consultations": []
         }
     ],
-    "consultations": [],
-    "consultation_maladie": []
+    "consultations": [
+        {
+            "id": 1,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 0,
+            "created_at": "02/16/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 2,
+            "observation": "Gingivite en regression",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/23/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        },
+        {
+            "id": 3,
+            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/28/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        },
+        {
+            "id": 4,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 0,
+            "created_at": "02/16/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 5,
+            "observation": "Gingivite en regression",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/23/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        },
+        {
+            "id": 6,
+            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/28/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        },
+        {
+            "id": 7,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 0,
+            "created_at": "02/16/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 8,
+            "observation": "Gingivite en regression",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/23/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        },
+        {
+            "id": 9,
+            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 0,
+            "precedente_id": 1,
+            "created_at": "02/28/2022",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": []
+        }
+    ],
+    "consultation_maladie": [
+        {
+            "id": 1,
+            "debut_traitement": "16/02/2022",
+            "fin_traitement": "02/28/22",
+            "traitement_reussi": "Oui",
+            "consultation_id": 1,
+            "maladie_id": 1,
+            "traitement_id": 0,
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 2,
+            "debut_traitement": "16/02/2022",
+            "fin_traitement": "",
+            "traitement_reussi": false,
+            "consultation_id": 4,
+            "maladie_id": 1,
+            "traitement_id": 0,
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 3,
+            "debut_traitement": "16/02/2022",
+            "fin_traitement": "",
+            "traitement_reussi": false,
+            "consultation_id": 7,
+            "maladie_id": 1,
+            "traitement_id": 0,
+            "created_at": "02-03-2022 16:14:15",
+            "updated_at": "02-03-2022 16:14:15",
+            "symptomes": [
+                1,
+                2
+            ]
+        }
+    ]
 }
