@@ -86,7 +86,8 @@ class ServiceData:
 
     def deserialize_output(self):
         json_data = {
-            "patients":[]
+            "patients":[],
+            "maladies": []
         }
 
         for patient_item in self.PATIENTS:
@@ -143,6 +144,28 @@ class ServiceData:
                     consultations['maladies'].append(maladie)
                 patient['consultations'].append(consultations)
             json_data['patients'].append(patient)
+
+        for m_item in self.MALADIES:
+            m = {
+                "id": m_item.id,
+                "libelle": m_item.libelle,
+                "description": m_item.description,
+                "symptomes":[],
+                "created_at": m_item.created_at,
+                "updated_at": m_item.updated_at
+            }
+            s_list = self.get_elements(m_item.symptomes, self.SYMPTOMES)
+            for s_item in s_list:
+                s = {
+                    "id": s_item.id,
+                    "libelle": s_item.libelle,
+                    "description": s_item.description,
+                    "created_at": s_item.created_at,
+                    "updated_at": s_item.updated_at
+                }
+                m['symptomes'].append(s)
+
+            json_data['maladies'].append(m)
 
         with open(base.OUTPUT_FILE, 'w') as file:
             file.write(json.dumps(json_data, indent=4))
