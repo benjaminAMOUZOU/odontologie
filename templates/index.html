@@ -44,6 +44,12 @@
                 </div>
                 {% endif %}
 
+                {% if erreur is defined %}
+                <div class="offset-lg-3 col-lg-6 mt-5 text-center">
+                    <span class="{% if erreur is defined %}alert alert-danger my-5{% endif %}">{{erreur}}</span>
+                </div>
+                {% endif %}
+
                <div class="offset-lg-3 col-lg-6 mt-5 text-center">
                     <h1>Sélectionnez un fichier csv</h1>
                     <form class="form" method="post" enctype="multipart/form-data" action="/upload">
