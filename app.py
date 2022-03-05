@@ -65,6 +65,10 @@ def upload_file():
 def home():
     return render_template('index.html')
 
+@app.route('/chart')
+def chart():
+    return render_template('chart.html')
+
 if __name__=="__main__":
     app.secret_key = 'clé secrete'
     app.config['SESSION_TYPE'] = 'filesystem'
