@@ -3,6 +3,13 @@
 {% block lien %}
     <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/chart">Graphiques</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Données</a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/data">Consultations</a></li>
+            <li><a class="dropdown-item" href="#">Maladies</a></li>
+        </ul>
+    </li>
 {% endblock %}
 
 {% block contenu %}
@@ -10,7 +17,7 @@
         <div class="row">
 
            <div class="offset-lg-3 col-lg-6 mt-5 text-center">
-                <h1>Chart.js</h1>
+                <h3>Chart.js</h3>
            </div>
 
         </div>

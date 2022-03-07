@@ -67,17 +67,12 @@ def home():
 
 @app.route('/chart')
 def chart():
-    data = [
-        ("12-13-15", 1245),
-        ("17-13-15", 1246),
-        ("15-13-15", 1247),
-        ("19-13-15", 1249),
-    ]
+    return render_template('chart.html')
 
-    labels = [row[0] for row in data]
-    values = [row[1] for row in data]
-
-    return render_template('chart.html', labels=labels, values=values)
+@app.route('/data')
+def data():
+    service = ServiceData.get_instance()
+    return render_template('data.html', consultations=service.CONSULTATIONS)
 
 if __name__=="__main__":
     app.secret_key = 'clé secrete'
