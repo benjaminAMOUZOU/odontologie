@@ -26,7 +26,7 @@ connecte = False;#Pour vérifier si le praticien est connecté
 
 def main(connecte,first_execution, praticien_courant):#La définition de la fonction est utile pour la récursivité
 
-    """if(first_execution):
+    if(first_execution):
         first_execution = False
         email = input("\nEmail: ")
         if(len(service.PRATICIENS) == 0):
@@ -59,53 +59,52 @@ def main(connecte,first_execution, praticien_courant):#La définition de la fonc
                 print("\nConnecté en tant que {} {} \n".format(praticien_courant.nom, praticien_courant.prenom))
                 connecte = True
 
-"""
-    #if(connecte):
-    #Menu principal
-    affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier csv", "4- Quitter le programme"])
-    service.deserialize()
-    service.deserialize_output()
+    if(connecte):
+        #Menu principal
+        affichage(["1- Maladie", "2- Consultation", "3- Charger un fichier csv", "4- Quitter le programme"])
+        service.deserialize()
+        service.deserialize_output()
 
-    #Saisie clavier
-    principal = clavier([1, 2, 3, 4])
+        #Saisie clavier
+        principal = clavier([1, 2, 3, 4])
 
-    if principal == 1:#Maladie
-        # Menu maladie
-        affichage(["1- Nouvelle maladie", "2- Maladies existantes"])
-        # Saisie clavier
-        maladie = clavier([1, 2])
+        if principal == 1:#Maladie
+            # Menu maladie
+            affichage(["1- Nouvelle maladie", "2- Maladies existantes"])
+            # Saisie clavier
+            maladie = clavier([1, 2])
 
-        if maladie == 1:#Nouvelle maladie
-            #Saisie nouvelle maladie
-            saisie_maladie()
+            if maladie == 1:#Nouvelle maladie
+                #Saisie nouvelle maladie
+                saisie_maladie()
 
-            #Relancement du programme
+                #Relancement du programme
+                main(connecte,first_execution, praticien_courant)
+            else:#Maladies existantes
+                #Liste des maladies existantes
+                print("\nListe des maladies existantes")
+                print("-----------------------------\n")
+                if len(service.MALADIES) > 0:
+                    for maladie in service.MALADIES:
+                        print(maladie)#Rédéfinir la méthode correspondante dans la classe Maladie
+                else:
+                    print("Aucune maladie enrégistrée !\n")
+
+                #Relancement du programme
+                main(connecte,first_execution, praticien_courant)
+
+        elif principal == 2:#Consultation
+            saisie_consultation(praticien_courant)
             main(connecte,first_execution, praticien_courant)
-        else:#Maladies existantes
-            #Liste des maladies existantes
-            print("\nListe des maladies existantes")
-            print("-----------------------------\n")
-            if len(service.MALADIES) > 0:
-                for maladie in service.MALADIES:
-                    print(maladie)#Rédéfinir la méthode correspondante dans la classe Maladie
-            else:
-                print("Aucune maladie enrégistrée !\n")
 
-            #Relancement du programme
+        elif principal == 3:#Fichier CSV
+            # Choix du fichier
+            url = fichier()
+            cp = CsvParser(url)
+            cp.run()
             main(connecte,first_execution, praticien_courant)
-
-    elif principal == 2:#Consultation
-        saisie_consultation(praticien_courant)
-        main(connecte,first_execution, praticien_courant)
-
-    elif principal == 3:#Fichier CSV
-        # Choix du fichier
-        url = fichier()
-        cp = CsvParser(url)
-        cp.run()
-        main(connecte,first_execution, praticien_courant)
-    else:#Exit
-        print("\nBye")
+        else:#Exit
+            print("\nBye")
 
 #Fonction de saisie des informations du praticien
 def saisie_info_praticien(email):
