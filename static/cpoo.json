@@ -11,9 +11,10 @@
                 {
                     "id": 1,
                     "type": "NORMAL",
+                    "praticien": "KLOUYIBO Komi",
                     "observation": "",
                     "created_at": "02/16/2022",
-                    "updated_at": "02-03-2022 16:35:34",
+                    "updated_at": "09-03-2022 02:08:56",
                     "maladies": [
                         {
                             "id": 1,
@@ -22,8 +23,8 @@
                             "debut_traitement": "16/02/2022",
                             "fin_traitement": "02/28/22",
                             "traitement_reussi": "Oui",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
+                            "created_at": "09-03-2022 02:08:56",
+                            "updated_at": "09-03-2022 02:08:56"
                         }
                     ],
                     "symptomes": [
@@ -31,123 +32,41 @@
                             "id": 1,
                             "libelle": "Maux de t\u00eate",
                             "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
+                            "created_at": "09-03-2022 02:08:56",
+                            "updated_at": "09-03-2022 02:08:56"
                         },
                         {
                             "id": 2,
                             "libelle": "Inflammation de la gencive",
                             "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
+                            "created_at": "09-03-2022 02:08:56",
+                            "updated_at": "09-03-2022 02:08:56"
                         }
                     ]
                 },
                 {
                     "id": 2,
                     "type": "REVISITE",
+                    "praticien": "KLOUYIBO Komi",
                     "observation": "Gingivite en regression",
                     "created_at": "02/23/2022",
-                    "updated_at": "02-03-2022 16:35:34",
+                    "updated_at": "09-03-2022 02:08:56",
                     "maladies": [],
                     "symptomes": []
                 },
                 {
                     "id": 3,
                     "type": "REVISITE",
+                    "praticien": "KLOUYIBO Komi",
                     "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
                     "created_at": "02/28/2022",
-                    "updated_at": "02-03-2022 16:35:34",
-                    "maladies": [],
-                    "symptomes": []
-                },
-                {
-                    "id": 4,
-                    "type": "NORMAL",
-                    "observation": "",
-                    "created_at": "02/16/2022",
-                    "updated_at": "02-03-2022 16:36:08",
-                    "maladies": [],
-                    "symptomes": [
-                        {
-                            "id": 1,
-                            "libelle": "Maux de t\u00eate",
-                            "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
-                        },
-                        {
-                            "id": 2,
-                            "libelle": "Inflammation de la gencive",
-                            "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
-                        }
-                    ]
-                },
-                {
-                    "id": 5,
-                    "type": "REVISITE",
-                    "observation": "Gingivite en regression",
-                    "created_at": "02/23/2022",
-                    "updated_at": "02-03-2022 16:36:08",
-                    "maladies": [],
-                    "symptomes": []
-                },
-                {
-                    "id": 6,
-                    "type": "REVISITE",
-                    "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
-                    "created_at": "02/28/2022",
-                    "updated_at": "02-03-2022 16:36:08",
-                    "maladies": [],
-                    "symptomes": []
-                },
-                {
-                    "id": 7,
-                    "type": "NORMAL",
-                    "observation": "",
-                    "created_at": "02/16/2022",
-                    "updated_at": "02-03-2022 16:37:32",
-                    "maladies": [],
-                    "symptomes": [
-                        {
-                            "id": 1,
-                            "libelle": "Maux de t\u00eate",
-                            "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
-                        },
-                        {
-                            "id": 2,
-                            "libelle": "Inflammation de la gencive",
-                            "description": "",
-                            "created_at": "02-03-2022 16:35:34",
-                            "updated_at": "02-03-2022 16:35:34"
-                        }
-                    ]
-                },
-                {
-                    "id": 8,
-                    "type": "REVISITE",
-                    "observation": "Gingivite en regression",
-                    "created_at": "02/23/2022",
-                    "updated_at": "02-03-2022 16:37:32",
-                    "maladies": [],
-                    "symptomes": []
-                },
-                {
-                    "id": 9,
-                    "type": "REVISITE",
-                    "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
-                    "created_at": "02/28/2022",
-                    "updated_at": "02-03-2022 16:37:32",
+                    "updated_at": "09-03-2022 02:08:56",
                     "maladies": [],
                     "symptomes": []
                 }
             ],
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34"
+            "created_at": "09-03-2022 02:08:56",
+            "updated_at": "09-03-2022 02:08:56"
         }
     ],
     "maladies": [
@@ -160,19 +79,19 @@
                     "id": 1,
                     "libelle": "Maux de t\u00eate",
                     "description": "",
-                    "created_at": "02-03-2022 16:35:34",
-                    "updated_at": "02-03-2022 16:35:34"
+                    "created_at": "09-03-2022 02:08:56",
+                    "updated_at": "09-03-2022 02:08:56"
                 },
                 {
                     "id": 2,
                     "libelle": "Inflammation de la gencive",
                     "description": "",
-                    "created_at": "02-03-2022 16:35:34",
-                    "updated_at": "02-03-2022 16:35:34"
+                    "created_at": "09-03-2022 02:08:56",
+                    "updated_at": "09-03-2022 02:08:56"
                 }
             ],
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34"
+            "created_at": "09-03-2022 02:08:56",
+            "updated_at": "09-03-2022 02:08:56"
         }
     ]
 }

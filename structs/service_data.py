@@ -64,23 +64,23 @@ class ServiceData:
                 results.append(item)
         return results
 
-    def date_filter(self, value, key:str, filter:str, elements, format="%d-%m-%Y"):
+    def date_filter(self, value, key:str, filter:str, elements, format="%m/%d/%Y"):
         results = []
         for item in elements:
             if filter.upper() == "EQ":
-                if date.strtodate(item.__dict__[key]) == date.strtodate(value, format=format):
+                if date.strtodate(item.__dict__[key], format=format) == date.strtodate(value, format=format):
                     results.append(item)
             if filter.upper() == "GT":
-                if date.strtodate(item.__dict__[key]) > date.strtodate(value, format=format):
+                if date.strtodate(item.__dict__[key], format=format) > date.strtodate(value, format=format):
                     results.append(item)
             if filter.upper() == "GTE":
-                if date.strtodate(item.__dict__[key]) >= date.strtodate(value, format=format):
+                if date.strtodate(item.__dict__[key], format=format) >= date.strtodate(value, format=format):
                     results.append(item)
             if filter.upper() == "LT":
-                if date.strtodate(item.__dict__[key]) <= date.strtodate(value, format=format):
+                if date.strtodate(item.__dict__[key], format=format) <= date.strtodate(value, format=format):
                     results.append(item)
             if filter.upper() == "LTE":
-                if date.strtodate(item.__dict__[key]) <= date.strtodate(value, format=format):
+                if date.strtodate(item.__dict__[key], format=format) <= date.strtodate(value, format=format):
                     results.append(item)
 
         return results
@@ -126,7 +126,7 @@ class ServiceData:
 
             data = {
                 "id": item.id,
-                "nom": item.libelle,
+                "libelle": item.libelle,
                 "created_at": item.created_at,
                 "updated_at": item.updated_at
             }
@@ -183,19 +183,25 @@ class ServiceData:
         }
 
         consultations_data = self.CONSULTATIONS
-
-        if query['praticien'] != None:
-            consultations_data = self.get_l(query['praticien'], 'praticien_id', consultations_data)
-        if query['patient'] != None:
-            consultations_data = self.get_l(query['patient'], 'patient_id', consultations_data)
-        if query['type'] != None:
-            consultations_data = self.get_l(query['type'], 'type_id', consultations_data)
+        print(0, consultations_data)
+        print(11, query['praticien'])
+        if query['praticien'] != None and query['praticien'] != '0':
+            consultations_data = self.get_l(int(query['praticien']), 'praticien_id', consultations_data)
+            print(1,consultations_data)
+        if query['praticien'] != None and query['patient'] != '0':
+            consultations_data = self.get_l(int(query['patient']), 'patient_id', consultations_data)
+            print(2,consultations_data)
+        if query['type'] != None and query['type'] != '0':
+            consultations_data = self.get_l(int(query['type']), 'type_id', consultations_data)
+            print(3,consultations_data)
         if query['start'] != None:
             consultations_data = self.date_filter(query['start'], 'created_at', "gte", consultations_data)
+            print(4,consultations_data)
         if query['end'] != None:
             consultations_data = self.date_filter(query['end'], 'created_at', "lte", consultations_data)
+            print(5,consultations_data)
 
-        for item in self.consultations_data:
+        for item in consultations_data:
             type = self.get_element(item.type_id, self.TYPE_CONSULTATIONS)
             praticien = self.get_element(item.praticien_id, self.PRATICIENS)
             patient = self.get_element(item.patient_id, self.PATIENTS)
