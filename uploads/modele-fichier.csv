@@ -1,4 +1,4 @@
 DateConsultation,TypeConsulation,Nom,Prenom,DateNaissance,Sexe,GroupeSanguin,Symptomes,Maladie,Traite,DateFinTraitement,Praticien,Observation,DatePremiereConsultation
-02/16/2022,Normal,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,Maux de tête|Inflammation de la gencive,Gingivite,,,Dr KLOUYIBO Komi,,16/02/2022
-02/23/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,,,Dr KLOUYIBO Komi,Gingivite en regression,16/02/2022
-02/28/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,Oui,02/28/22,Dr KLOUYIBO Komi,Gingivite complètement guérie,16/02/20022
+02/16/2022,Normal,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,Maux de tête|Inflammation de la gencive,Gingivite,,,KLOUYIBO Komi,,16/02/2022
+02/23/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,,,KLOUYIBO Komi,Gingivite en regression,16/02/2022
+02/28/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,Oui,02/28/22,KLOUYIBO Komi,Gingivite complètement guérie,16/02/20022

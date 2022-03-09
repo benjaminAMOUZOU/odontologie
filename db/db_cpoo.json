@@ -1,13 +1,24 @@
 {
-    "praticiens": [],
+    "praticiens": [
+        {
+            "id": 1,
+            "nom": "KLOUYIBO",
+            "prenom": "Komi",
+            "sexe": "M",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
+            "email": "KLOUYIBO.Komi@gmail.com",
+            "password": "12345678"
+        }
+    ],
     "patients": [
         {
             "id": 1,
             "nom": "AMOUZOU",
             "prenom": "Kokou Benjamin",
             "sexe": "M",
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
             "date_naissance": "09/06/2000",
             "group_sanguin": "O+",
             "consultations": [
@@ -16,10 +27,7 @@
                 3,
                 4,
                 5,
-                6,
-                7,
-                8,
-                9
+                6
             ]
         }
     ],
@@ -28,8 +36,8 @@
             "id": 1,
             "libelle": "Gingivite",
             "description": "",
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
             "symptomes": [
                 1,
                 2
@@ -43,8 +51,8 @@
             "id": 1,
             "libelle": "Maux de t\u00eate",
             "description": "",
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
             "maladies": [
                 1
             ]
@@ -53,8 +61,8 @@
             "id": 2,
             "libelle": "Inflammation de la gencive",
             "description": "",
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
             "maladies": [
                 1
             ]
@@ -82,10 +90,10 @@
             "observation": "",
             "type_id": 1,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:35:34",
+            "updated_at": "08-03-2022 23:21:57",
             "symptomes": [
                 1,
                 2
@@ -96,10 +104,10 @@
             "observation": "Gingivite en regression",
             "type_id": 2,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:35:34",
+            "updated_at": "08-03-2022 23:21:57",
             "symptomes": []
         },
         {
@@ -107,10 +115,10 @@
             "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
             "type_id": 2,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:35:34",
+            "updated_at": "08-03-2022 23:21:57",
             "symptomes": []
         },
         {
@@ -118,10 +126,10 @@
             "observation": "",
             "type_id": 1,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:36:08",
+            "updated_at": "09-03-2022 00:58:40",
             "symptomes": [
                 1,
                 2
@@ -132,10 +140,10 @@
             "observation": "Gingivite en regression",
             "type_id": 2,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:36:08",
+            "updated_at": "09-03-2022 00:58:40",
             "symptomes": []
         },
         {
@@ -143,46 +151,10 @@
             "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
             "type_id": 2,
             "patient_id": 1,
-            "praticien_id": 0,
+            "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:36:08",
-            "symptomes": []
-        },
-        {
-            "id": 7,
-            "observation": "",
-            "type_id": 1,
-            "patient_id": 1,
-            "praticien_id": 0,
-            "precedente_id": 0,
-            "created_at": "02/16/2022",
-            "updated_at": "02-03-2022 16:37:32",
-            "symptomes": [
-                1,
-                2
-            ]
-        },
-        {
-            "id": 8,
-            "observation": "Gingivite en regression",
-            "type_id": 2,
-            "patient_id": 1,
-            "praticien_id": 0,
-            "precedente_id": 1,
-            "created_at": "02/23/2022",
-            "updated_at": "02-03-2022 16:37:32",
-            "symptomes": []
-        },
-        {
-            "id": 9,
-            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
-            "type_id": 2,
-            "patient_id": 1,
-            "praticien_id": 0,
-            "precedente_id": 1,
-            "created_at": "02/28/2022",
-            "updated_at": "02-03-2022 16:37:32",
+            "updated_at": "09-03-2022 00:58:40",
             "symptomes": []
         }
     ],
@@ -195,8 +167,8 @@
             "consultation_id": 1,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "02-03-2022 16:35:34",
-            "updated_at": "02-03-2022 16:35:34",
+            "created_at": "08-03-2022 23:21:57",
+            "updated_at": "08-03-2022 23:21:57",
             "symptomes": [
                 1,
                 2
@@ -210,23 +182,8 @@
             "consultation_id": 4,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "02-03-2022 16:36:08",
-            "updated_at": "02-03-2022 16:36:08",
-            "symptomes": [
-                1,
-                2
-            ]
-        },
-        {
-            "id": 3,
-            "debut_traitement": "16/02/2022",
-            "fin_traitement": "",
-            "traitement_reussi": false,
-            "consultation_id": 7,
-            "maladie_id": 1,
-            "traitement_id": 0,
-            "created_at": "02-03-2022 16:37:32",
-            "updated_at": "02-03-2022 16:37:32",
+            "created_at": "09-03-2022 00:58:40",
+            "updated_at": "09-03-2022 00:58:40",
             "symptomes": [
                 1,
                 2

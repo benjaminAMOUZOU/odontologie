@@ -11,6 +11,7 @@ class CsvParser:
     def __init__(self, url):
         self.url = self.check_url(url)
 
+        self.praticien = None
         self.patient = None
         self.maladie = None
         self.symptomes = []
@@ -53,6 +54,13 @@ class CsvParser:
 
     def runCsvBase(self, base : CsvBase):
         create_maladie = False
+        praticien_name = base.praticien.split(' ', 1)[0] if len(base.praticien.split(' ', 1)) > 0 else None
+        praticien_first_name = base.praticien.split(' ', 1)[1] if len(base.praticien.split(' ', 1)) > 1 else None
+        self.praticien = self.get_element("nom", service.PRATICIENS, praticien_name)
+        if self.praticien == None:
+            self.praticien = Praticien(self.next_id(service.PRATICIENS), praticien_name, praticien_first_name, "M",
+                                   "{}.{}@gmail.com".format(praticien_name, praticien_first_name), "12345678")
+            service.PRATICIENS.append(self.praticien)
 
         self.patient = self.get_element("nom", service.PATIENTS, base.nom)
         if self.patient == None:
@@ -81,6 +89,7 @@ class CsvParser:
             self.consultation.symptomes = [item.id for item in self.symptomes]
             self.consultation.type_id = 1
             self.consultation.patient_id = self.patient.id
+            self.consultation.praticien_id = self.praticien.id
 
             self.consultation_maladie = ConsultationMaladie(self.next_id(service.CONSULTATION_MALADIES), base.date_premiere_consultation, '')
             self.consultation_maladie.consultation_id = self.consultation.id
@@ -101,6 +110,7 @@ class CsvParser:
 
             self.consultation = Consultation(self.next_id(service.CONSULTATIONS), base.observation, created_at=base.date_consultation)
             self.consultation.patient_id = self.patient.id
+            self.consultation.praticien_id = self.praticien.id
             self.consultation.type_id = 2
 
             tmp_consultation = self.get_elements("patient_id", service.CONSULTATIONS, self.patient.id)
