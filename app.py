@@ -63,9 +63,13 @@ def upload_file():
 
 @app.route('/')
 def home():
+    return render_template('index.html')
+
+@app.route('/patients')
+def patients():
     service = ServiceData.get_instance()
     data = service.deserialize_output(output="JSON")
-    return render_template('index.html',data=data)
+    return render_template('patient.html', data=data)
 
 def get(id, elements):
     for item in elements:

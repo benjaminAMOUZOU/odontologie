@@ -12,7 +12,7 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Données</a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/consultations">Consultations</a></li>
-            <li><a class="dropdown-item" href="#">Maladies</a></li>
+            <li><a class="dropdown-item" href="/patients">Patients</a></li>
         </ul>
     </li>
 {% endblock %}
@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
            <div class="offset-lg-3 col-lg-6 mt-5 text-center">
-                <h3>Detail Patient</h3>
+                <h5>Detail des consultations du patient {{data.nom}} {{data.prenom}}</h5>
            </div>
         </div>
 
@@ -46,7 +46,7 @@
                         <td>{{item.type}}</td>
                         <td>
                             {% for m in item.maladies %}
-                                [{{m.libelle}} - deb: {{m.debut_traitement}} {% if m.fin_traitement %}  fin: {{ m.fin_traitement }} etat: {{m.traitement_reussi}}  {% endif %} ] {% if loop.index != item.maladies|length %}  |  {% endif %}
+                                [{{m.libelle}} - D: {{m.debut_traitement}} {% if m.fin_traitement %}  F: {{ m.fin_traitement }} E: {{m.traitement_reussi}}  {% endif %} ] {% if loop.index != item.maladies|length %}  |  {% endif %}
                             {% endfor %}
                         </td>
                         <td>
