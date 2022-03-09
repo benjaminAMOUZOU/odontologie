@@ -14,7 +14,7 @@
                     "praticien": "KLOUYIBO Komi",
                     "observation": "",
                     "created_at": "02/16/2022",
-                    "updated_at": "09-03-2022 02:08:56",
+                    "updated_at": "09-03-2022 14:18:56",
                     "maladies": [
                         {
                             "id": 1,
@@ -23,8 +23,8 @@
                             "debut_traitement": "16/02/2022",
                             "fin_traitement": "02/28/22",
                             "traitement_reussi": "Oui",
-                            "created_at": "09-03-2022 02:08:56",
-                            "updated_at": "09-03-2022 02:08:56"
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
                         }
                     ],
                     "symptomes": [
@@ -32,15 +32,15 @@
                             "id": 1,
                             "libelle": "Maux de t\u00eate",
                             "description": "",
-                            "created_at": "09-03-2022 02:08:56",
-                            "updated_at": "09-03-2022 02:08:56"
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
                         },
                         {
                             "id": 2,
                             "libelle": "Inflammation de la gencive",
                             "description": "",
-                            "created_at": "09-03-2022 02:08:56",
-                            "updated_at": "09-03-2022 02:08:56"
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
                         }
                     ]
                 },
@@ -50,7 +50,7 @@
                     "praticien": "KLOUYIBO Komi",
                     "observation": "Gingivite en regression",
                     "created_at": "02/23/2022",
-                    "updated_at": "09-03-2022 02:08:56",
+                    "updated_at": "09-03-2022 14:18:56",
                     "maladies": [],
                     "symptomes": []
                 },
@@ -60,13 +60,129 @@
                     "praticien": "KLOUYIBO Komi",
                     "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
                     "created_at": "02/28/2022",
-                    "updated_at": "09-03-2022 02:08:56",
+                    "updated_at": "09-03-2022 14:18:56",
                     "maladies": [],
                     "symptomes": []
                 }
             ],
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56"
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
+        },
+        {
+            "id": 2,
+            "nom": "OFFRIDAM",
+            "prenom": "Kossi Jean-Claude",
+            "sexe": "M",
+            "date_naissance": "10/07/1996",
+            "group_sanguin": "A+",
+            "consultations": [
+                {
+                    "id": 4,
+                    "type": "NORMAL",
+                    "praticien": "SODOKIN Beauty",
+                    "observation": "",
+                    "created_at": "03/01/2022",
+                    "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [
+                        {
+                            "id": 2,
+                            "libelle": "Carie dentaire",
+                            "description": "",
+                            "debut_traitement": "01/03/2022",
+                            "fin_traitement": "03/01/22",
+                            "traitement_reussi": "Oui",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ],
+                    "symptomes": [
+                        {
+                            "id": 3,
+                            "libelle": "",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "type": "REVISITE",
+                    "praticien": "SODOKIN Beauty",
+                    "observation": "Carie dentaire obtur\u00e9e",
+                    "created_at": "03/08/2022",
+                    "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [],
+                    "symptomes": []
+                }
+            ],
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
+        },
+        {
+            "id": 3,
+            "nom": "DUCOBU",
+            "prenom": "Gros",
+            "sexe": "M",
+            "date_naissance": "09/06/2010",
+            "group_sanguin": "B+",
+            "consultations": [
+                {
+                    "id": 6,
+                    "type": "NORMAL",
+                    "praticien": "AGBANOUVI Kodjo",
+                    "observation": "",
+                    "created_at": "04/10/2022",
+                    "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [
+                        {
+                            "id": 3,
+                            "libelle": "Abc\u00e8s dentaire",
+                            "description": "",
+                            "debut_traitement": "04/10/2022",
+                            "fin_traitement": "04/21/22",
+                            "traitement_reussi": "Oui",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ],
+                    "symptomes": [
+                        {
+                            "id": 4,
+                            "libelle": "Gencive rouge et gonfl\u00e9e",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        },
+                        {
+                            "id": 5,
+                            "libelle": "Sensation de chaleur",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        },
+                        {
+                            "id": 6,
+                            "libelle": "Saignements",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "type": "REVISITE",
+                    "praticien": "AGBANOUVI Kodjo",
+                    "observation": "Pr\u00e9sence de s\u00e9qu\u00e8lles",
+                    "created_at": "04/21/2022",
+                    "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [],
+                    "symptomes": []
+                }
+            ],
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
         }
     ],
     "maladies": [
@@ -79,19 +195,65 @@
                     "id": 1,
                     "libelle": "Maux de t\u00eate",
                     "description": "",
-                    "created_at": "09-03-2022 02:08:56",
-                    "updated_at": "09-03-2022 02:08:56"
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
                 },
                 {
                     "id": 2,
                     "libelle": "Inflammation de la gencive",
                     "description": "",
-                    "created_at": "09-03-2022 02:08:56",
-                    "updated_at": "09-03-2022 02:08:56"
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
                 }
             ],
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56"
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
+        },
+        {
+            "id": 2,
+            "libelle": "Carie dentaire",
+            "description": "",
+            "symptomes": [
+                {
+                    "id": 3,
+                    "libelle": "",
+                    "description": "",
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
+                }
+            ],
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
+        },
+        {
+            "id": 3,
+            "libelle": "Abc\u00e8s dentaire",
+            "description": "",
+            "symptomes": [
+                {
+                    "id": 4,
+                    "libelle": "Gencive rouge et gonfl\u00e9e",
+                    "description": "",
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
+                },
+                {
+                    "id": 5,
+                    "libelle": "Sensation de chaleur",
+                    "description": "",
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
+                },
+                {
+                    "id": 6,
+                    "libelle": "Saignements",
+                    "description": "",
+                    "created_at": "09-03-2022 14:18:56",
+                    "updated_at": "09-03-2022 14:18:56"
+                }
+            ],
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56"
         }
     ]
 }
