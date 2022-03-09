@@ -92,6 +92,12 @@ def detail(id):
 def chart():
     return render_template('chart.html')
 
+@app.route('/consultations-months', methods=['GET', 'POST'])
+def consultations_months():
+    print(request.form.get('year'))
+    service = ServiceData.get_instance()
+    return service.consultation_per_month(year=request.form.get('year'))
+
 @app.route('/data')
 def data():
     service = ServiceData.get_instance()

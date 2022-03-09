@@ -117,6 +117,18 @@ class ServiceData:
         with open(base.FILE, 'w') as file:
             file.write(json.dumps(json_data, indent=4))
 
+    def consultation_per_month(self, year=2022):
+        months = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre"]
+        values=[0,0,0,0,0,0,0,0,0,0,0,0]
+
+        for item in self.CONSULTATIONS:
+            m = date.strtodate(item.created_at, "%m/%d/%Y")
+            if m.year == int(year):
+                values[m.month - 1] += 1
+
+        return {"months": months, "values":values}
+
+
     def json_types(self):
         json_data = {
             "types": []
