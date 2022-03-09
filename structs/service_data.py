@@ -6,7 +6,7 @@ __updateAt__ = "09/02/2022"
 
 from structs.read import Serialize
 from configs import base
-from untils import file
+from untils import file, date
 import json
 
 serialize = Serialize()
@@ -49,7 +49,41 @@ class ServiceData:
         for item in elements:
             if item.__dict__[foreign_id] == id:
                 results.append(item)
-            return results
+        return results
+
+    def get(self, value, key, elements):
+        for item in elements:
+            if item.__dict__[key] == value:
+                return item
+        return None
+
+    def get_l(self, value, key, elements):
+        results = []
+        for item in elements:
+            if item.__dict__[key] == value:
+                results.append(item)
+        return results
+
+    def date_filter(self, value, key:str, filter:str, elements, format="%d-%m-%Y"):
+        results = []
+        for item in elements:
+            if filter.upper() == "EQ":
+                if date.strtodate(item.__dict__[key]) == date.strtodate(value, format=format):
+                    results.append(item)
+            if filter.upper() == "GT":
+                if date.strtodate(item.__dict__[key]) > date.strtodate(value, format=format):
+                    results.append(item)
+            if filter.upper() == "GTE":
+                if date.strtodate(item.__dict__[key]) >= date.strtodate(value, format=format):
+                    results.append(item)
+            if filter.upper() == "LT":
+                if date.strtodate(item.__dict__[key]) <= date.strtodate(value, format=format):
+                    results.append(item)
+            if filter.upper() == "LTE":
+                if date.strtodate(item.__dict__[key]) <= date.strtodate(value, format=format):
+                    results.append(item)
+
+        return results
 
     def deserialize(self):
         json_data = {
@@ -83,8 +117,133 @@ class ServiceData:
         with open(base.FILE, 'w') as file:
             file.write(json.dumps(json_data, indent=4))
 
+    def json_types(self):
+        json_data = {
+            "types": []
+        }
 
-    def deserialize_output(self):
+        for item in self.TYPE_CONSULTATIONS:
+
+            data = {
+                "id": item.id,
+                "nom": item.libelle,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at
+            }
+
+            json_data['types'].append(data)
+
+        return json_data
+
+    def json_patients(self):
+        json_data = {
+            "patients": []
+        }
+
+        for item in self.PATIENTS:
+
+            data = {
+                "id": item.id,
+                "nom": item.nom,
+                "prenom": item.prenom,
+                "sexe": item.sexe,
+                "date_naissance": item.date_naissance,
+                "group_sanguin": item.group_sanguin,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at
+            }
+
+            json_data['patients'].append(data)
+
+        return json_data
+
+    def json_praticiens(self):
+        json_data = {
+            "praticiens": []
+        }
+
+        for item in self.PRATICIENS:
+            data = {
+                "id": item.id,
+                "nom": item.nom,
+                "prenom": item.prenom,
+                "sexe": item.sexe,
+                "email": item.email,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at
+            }
+
+            json_data['praticiens'].append(data)
+
+        return json_data
+
+    def json_consultations(self, query={"patient":None, "praticien": None, "type":None, "start":None, "end":None}):
+        json_data = {
+            "consultations": []
+        }
+
+        consultations_data = self.CONSULTATIONS
+
+        if query['praticien'] != None:
+            consultations_data = self.get_l(query['praticien'], 'praticien_id', consultations_data)
+        if query['patient'] != None:
+            consultations_data = self.get_l(query['patient'], 'patient_id', consultations_data)
+        if query['type'] != None:
+            consultations_data = self.get_l(query['type'], 'type_id', consultations_data)
+        if query['start'] != None:
+            consultations_data = self.date_filter(query['start'], 'created_at', "gte", consultations_data)
+        if query['end'] != None:
+            consultations_data = self.date_filter(query['end'], 'created_at', "lte", consultations_data)
+
+        for item in self.consultations_data:
+            type = self.get_element(item.type_id, self.TYPE_CONSULTATIONS)
+            praticien = self.get_element(item.praticien_id, self.PRATICIENS)
+            patient = self.get_element(item.patient_id, self.PATIENTS)
+            data = {
+                "id": item.id,
+                "type": type.libelle if type != None else None,
+                "praticien": "{} {}".format(praticien.nom, praticien.prenom),
+                "patient": "{} {}".format(patient.nom, patient.prenom),
+                "observation": item.observation,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at,
+                "maladies": [],
+                "symptomes": []
+            }
+
+            symptomes_consultation = self.get_elements(item.symptomes, self.SYMPTOMES)
+            for symptome_item in symptomes_consultation:
+                symptome = {
+                    "id": symptome_item.id,
+                    "libelle": symptome_item.libelle,
+                    "description": symptome_item.description,
+                    "created_at": symptome_item.created_at,
+                    "updated_at": symptome_item.updated_at
+                }
+                data['symptomes'].append(symptome)
+
+            maladies_consultation = self.foreign_elements(item.id, 'consultation_id',
+                                                          self.CONSULTATION_MALADIES)
+            for maladie_item in maladies_consultation:
+                __maladie = self.get_element(maladie_item.maladie_id, self.MALADIES)
+                maladie = {
+                    "id": __maladie.id,
+                    "libelle": __maladie.libelle,
+                    "description": __maladie.description,
+                    "debut_traitement": maladie_item.debut_traitement,
+                    "fin_traitement": maladie_item.fin_traitement,
+                    "traitement_reussi": maladie_item.traitement_reussi,
+                    "created_at": __maladie.created_at,
+                    "updated_at": __maladie.updated_at
+                }
+                data['maladies'].append(maladie)
+            json_data['consultations'].append(data)
+
+        return json_data
+
+
+
+    def deserialize_output(self, output="FILE", path=base.OUTPUT_FILE):
         json_data = {
             "patients":[],
             "maladies": []
@@ -107,9 +266,11 @@ class ServiceData:
             consultations_patient = self.get_elements(patient_item.consultations, self.CONSULTATIONS)
             for consultation_item in consultations_patient:
                 type = self.get_element(consultation_item.type_id, self.TYPE_CONSULTATIONS)
+                praticien = self.get_element(consultation_item.praticien_id, self.PRATICIENS)
                 consultations = {
                     "id": consultation_item.id,
                     "type": type.libelle if type != None else None,
+                    "praticien": "{} {}".format(praticien.nom, praticien.prenom),
                     "observation": consultation_item.observation,
                     "created_at": consultation_item.created_at,
                     "updated_at": consultation_item.updated_at,
@@ -167,5 +328,9 @@ class ServiceData:
 
             json_data['maladies'].append(m)
 
-        with open(base.OUTPUT_FILE, 'w') as file:
-            file.write(json.dumps(json_data, indent=4))
+        if output == "FILE":
+            with open(path, 'w') as file:
+                file.write(json.dumps(json_data, indent=4))
+            return path
+        elif output == "JSON":
+            return json_data
