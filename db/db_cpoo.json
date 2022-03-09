@@ -5,9 +5,29 @@
             "nom": "KLOUYIBO",
             "prenom": "Komi",
             "sexe": "M",
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "email": "KLOUYIBO.Komi@gmail.com",
+            "password": "12345678"
+        },
+        {
+            "id": 2,
+            "nom": "SODOKIN",
+            "prenom": "Beauty",
+            "sexe": "M",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "email": "SODOKIN.Beauty@gmail.com",
+            "password": "12345678"
+        },
+        {
+            "id": 3,
+            "nom": "AGBANOUVI",
+            "prenom": "Kodjo",
+            "sexe": "M",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "email": "AGBANOUVI.Kodjo@gmail.com",
             "password": "12345678"
         }
     ],
@@ -17,14 +37,42 @@
             "nom": "AMOUZOU",
             "prenom": "Kokou Benjamin",
             "sexe": "M",
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "date_naissance": "09/06/2000",
             "group_sanguin": "O+",
             "consultations": [
                 1,
                 2,
                 3
+            ]
+        },
+        {
+            "id": 2,
+            "nom": "OFFRIDAM",
+            "prenom": "Kossi Jean-Claude",
+            "sexe": "M",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "date_naissance": "10/07/1996",
+            "group_sanguin": "A+",
+            "consultations": [
+                4,
+                5
+            ]
+        },
+        {
+            "id": 3,
+            "nom": "DUCOBU",
+            "prenom": "Gros",
+            "sexe": "M",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "date_naissance": "09/06/2010",
+            "group_sanguin": "B+",
+            "consultations": [
+                6,
+                7
             ]
         }
     ],
@@ -33,11 +81,35 @@
             "id": 1,
             "libelle": "Gingivite",
             "description": "",
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
                 1,
                 2
+            ],
+            "traitements": []
+        },
+        {
+            "id": 2,
+            "libelle": "Carie dentaire",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                3
+            ],
+            "traitements": []
+        },
+        {
+            "id": 3,
+            "libelle": "Abc\u00e8s dentaire",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                4,
+                5,
+                6
             ],
             "traitements": []
         }
@@ -48,8 +120,8 @@
             "id": 1,
             "libelle": "Maux de t\u00eate",
             "description": "",
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "maladies": [
                 1
             ]
@@ -58,10 +130,50 @@
             "id": 2,
             "libelle": "Inflammation de la gencive",
             "description": "",
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "maladies": [
                 1
+            ]
+        },
+        {
+            "id": 3,
+            "libelle": "",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "maladies": [
+                2
+            ]
+        },
+        {
+            "id": 4,
+            "libelle": "Gencive rouge et gonfl\u00e9e",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "maladies": [
+                3
+            ]
+        },
+        {
+            "id": 5,
+            "libelle": "Sensation de chaleur",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "maladies": [
+                3
+            ]
+        },
+        {
+            "id": 6,
+            "libelle": "Saignements",
+            "description": "",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "maladies": [
+                3
             ]
         }
     ],
@@ -90,7 +202,7 @@
             "praticien_id": 1,
             "precedente_id": 0,
             "created_at": "02/16/2022",
-            "updated_at": "09-03-2022 02:08:56",
+            "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
                 1,
                 2
@@ -104,7 +216,7 @@
             "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/23/2022",
-            "updated_at": "09-03-2022 02:08:56",
+            "updated_at": "09-03-2022 14:18:56",
             "symptomes": []
         },
         {
@@ -115,7 +227,57 @@
             "praticien_id": 1,
             "precedente_id": 1,
             "created_at": "02/28/2022",
-            "updated_at": "09-03-2022 02:08:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": []
+        },
+        {
+            "id": 4,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 2,
+            "praticien_id": 2,
+            "precedente_id": 0,
+            "created_at": "03/01/2022",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                3
+            ]
+        },
+        {
+            "id": 5,
+            "observation": "Carie dentaire obtur\u00e9e",
+            "type_id": 2,
+            "patient_id": 2,
+            "praticien_id": 2,
+            "precedente_id": 4,
+            "created_at": "03/08/2022",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": []
+        },
+        {
+            "id": 6,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 3,
+            "praticien_id": 3,
+            "precedente_id": 0,
+            "created_at": "04/10/2022",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 7,
+            "observation": "Pr\u00e9sence de s\u00e9qu\u00e8lles",
+            "type_id": 2,
+            "patient_id": 3,
+            "praticien_id": 3,
+            "precedente_id": 6,
+            "created_at": "04/21/2022",
+            "updated_at": "09-03-2022 14:18:56",
             "symptomes": []
         }
     ],
@@ -128,11 +290,41 @@
             "consultation_id": 1,
             "maladie_id": 1,
             "traitement_id": 0,
-            "created_at": "09-03-2022 02:08:56",
-            "updated_at": "09-03-2022 02:08:56",
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
                 1,
                 2
+            ]
+        },
+        {
+            "id": 2,
+            "debut_traitement": "01/03/2022",
+            "fin_traitement": "03/01/22",
+            "traitement_reussi": "Oui",
+            "consultation_id": 4,
+            "maladie_id": 2,
+            "traitement_id": 0,
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                3
+            ]
+        },
+        {
+            "id": 3,
+            "debut_traitement": "04/10/2022",
+            "fin_traitement": "04/21/22",
+            "traitement_reussi": "Oui",
+            "consultation_id": 6,
+            "maladie_id": 3,
+            "traitement_id": 0,
+            "created_at": "09-03-2022 14:18:56",
+            "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                4,
+                5,
+                6
             ]
         }
     ]

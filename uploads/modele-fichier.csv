@@ -1,4 +1,8 @@
 DateConsultation,TypeConsulation,Nom,Prenom,DateNaissance,Sexe,GroupeSanguin,Symptomes,Maladie,Traite,DateFinTraitement,Praticien,Observation,DatePremiereConsultation
 02/16/2022,Normal,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,Maux de tête|Inflammation de la gencive,Gingivite,,,KLOUYIBO Komi,,16/02/2022
 02/23/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,,,KLOUYIBO Komi,Gingivite en regression,16/02/2022
-02/28/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,Oui,02/28/22,KLOUYIBO Komi,Gingivite complètement guérie,16/02/20022
+02/28/2022,Revisite,AMOUZOU,Kokou Benjamin,09/06/2000,M,O+,,,Oui,02/28/22,KLOUYIBO Komi,Gingivite complètement guérie,16/02/2022
+03/01/2022,Normal,OFFRIDAM,Kossi Jean-Claude,10/07/1996,M,A+,,Carie dentaire,,,SODOKIN Beauty,,01/03/2022
+03/08/2022,Revisite,OFFRIDAM,Kossi Jean-Claude,10/07/1996,M,A+,,,Oui,03/01/22,SODOKIN Beauty,Carie dentaire obturée,01/03/2022
+04/10/2022,Normal,DUCOBU,Gros,09/06/2010,M,B+,Gencive rouge et gonflée|Sensation de chaleur|Saignements,Abcès dentaire,,,AGBANOUVI Kodjo,,04/10/2022
+04/21/2022,Revisite,DUCOBU,Gros,09/06/2010,M,B+,,,Oui,04/21/22,AGBANOUVI Kodjo,Présence de séquèlles,04/10/2022
