@@ -44,7 +44,10 @@
             "consultations": [
                 1,
                 2,
-                3
+                3,
+                8,
+                9,
+                10
             ]
         },
         {
@@ -58,7 +61,9 @@
             "group_sanguin": "A+",
             "consultations": [
                 4,
-                5
+                5,
+                11,
+                12
             ]
         },
         {
@@ -72,7 +77,9 @@
             "group_sanguin": "B+",
             "consultations": [
                 6,
-                7
+                7,
+                13,
+                14
             ]
         }
     ],
@@ -86,8 +93,7 @@
             "symptomes": [
                 1,
                 2
-            ],
-            "traitements": []
+            ]
         },
         {
             "id": 2,
@@ -97,8 +103,7 @@
             "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
                 3
-            ],
-            "traitements": []
+            ]
         },
         {
             "id": 3,
@@ -110,11 +115,9 @@
                 4,
                 5,
                 6
-            ],
-            "traitements": []
+            ]
         }
     ],
-    "traitements": [],
     "symptomes": [
         {
             "id": 1,
@@ -279,6 +282,92 @@
             "created_at": "04/21/2022",
             "updated_at": "09-03-2022 14:18:56",
             "symptomes": []
+        },
+        {
+            "id": 8,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 1,
+            "praticien_id": 1,
+            "precedente_id": 0,
+            "created_at": "02/16/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 9,
+            "observation": "Gingivite en regression",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 1,
+            "precedente_id": 1,
+            "created_at": "02/23/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": []
+        },
+        {
+            "id": 10,
+            "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+            "type_id": 2,
+            "patient_id": 1,
+            "praticien_id": 1,
+            "precedente_id": 1,
+            "created_at": "02/28/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": []
+        },
+        {
+            "id": 11,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 2,
+            "praticien_id": 2,
+            "precedente_id": 0,
+            "created_at": "03/01/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": [
+                3
+            ]
+        },
+        {
+            "id": 12,
+            "observation": "Carie dentaire obtur\u00e9e",
+            "type_id": 2,
+            "patient_id": 2,
+            "praticien_id": 2,
+            "precedente_id": 4,
+            "created_at": "03/08/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": []
+        },
+        {
+            "id": 13,
+            "observation": "",
+            "type_id": 1,
+            "patient_id": 3,
+            "praticien_id": 3,
+            "precedente_id": 0,
+            "created_at": "04/10/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": [
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 14,
+            "observation": "Pr\u00e9sence de s\u00e9qu\u00e8lles",
+            "type_id": 2,
+            "patient_id": 3,
+            "praticien_id": 3,
+            "precedente_id": 6,
+            "created_at": "04/21/2022",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": []
         }
     ],
     "consultation_maladie": [
@@ -289,7 +378,6 @@
             "traitement_reussi": "Oui",
             "consultation_id": 1,
             "maladie_id": 1,
-            "traitement_id": 0,
             "created_at": "09-03-2022 14:18:56",
             "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
@@ -304,7 +392,6 @@
             "traitement_reussi": "Oui",
             "consultation_id": 4,
             "maladie_id": 2,
-            "traitement_id": 0,
             "created_at": "09-03-2022 14:18:56",
             "updated_at": "09-03-2022 14:18:56",
             "symptomes": [
@@ -318,9 +405,50 @@
             "traitement_reussi": "Oui",
             "consultation_id": 6,
             "maladie_id": 3,
-            "traitement_id": 0,
             "created_at": "09-03-2022 14:18:56",
             "updated_at": "09-03-2022 14:18:56",
+            "symptomes": [
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 4,
+            "debut_traitement": "16/02/2022",
+            "fin_traitement": "",
+            "traitement_reussi": false,
+            "consultation_id": 8,
+            "maladie_id": 1,
+            "created_at": "16-03-2022 03:32:52",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 5,
+            "debut_traitement": "01/03/2022",
+            "fin_traitement": "",
+            "traitement_reussi": false,
+            "consultation_id": 11,
+            "maladie_id": 2,
+            "created_at": "16-03-2022 03:32:52",
+            "updated_at": "16-03-2022 03:32:52",
+            "symptomes": [
+                3
+            ]
+        },
+        {
+            "id": 6,
+            "debut_traitement": "04/10/2022",
+            "fin_traitement": "",
+            "traitement_reussi": false,
+            "consultation_id": 13,
+            "maladie_id": 3,
+            "created_at": "16-03-2022 03:32:52",
+            "updated_at": "16-03-2022 03:32:52",
             "symptomes": [
                 4,
                 5,

@@ -26,7 +26,7 @@ class ServiceData:
         self.CONSULTATIONS = serialize.get_consultations()
         self.TYPE_CONSULTATIONS = serialize.get_type_consultations()
         self.SYMPTOMES = serialize.get_symptomes()
-        self.TRAITEMENTS = serialize.get_traitements()
+        #self.TRAITEMENTS = serialize.get_traitements()
         self.PRATICIENS = serialize.get_praticiens()
         self.CONSULTATION_MALADIES = serialize.get_consultation_maladie()
 
@@ -51,6 +51,12 @@ class ServiceData:
                 results.append(item)
         return results
 
+    def gett(self, value, key, elements):
+        for item in elements:
+            if item[key] == value:
+                return item
+        return None
+
     def get(self, value, key, elements):
         for item in elements:
             if item.__dict__[key] == value:
@@ -62,6 +68,15 @@ class ServiceData:
         for item in elements:
             if item.__dict__[key] == value:
                 results.append(item)
+        return results
+
+    def get_ls(self, value, key, elements):
+        results = []
+        for item in elements:
+            for e in item.__dict__[key]:
+                if e == value:
+                    results.append(item)
+                    break
         return results
 
     def date_filter(self, value, key:str, filter:str, elements, format="%m/%d/%Y"):
@@ -90,7 +105,6 @@ class ServiceData:
             "praticiens":[],
             "patients":[],
             "maladies":[],
-            "traitements":[],
             "symptomes":[],
             "consultations_type":[],
             "consultations":[],
@@ -107,8 +121,6 @@ class ServiceData:
             json_data["consultations_type"].append(json.loads(item.to_json()))
         for item in self.SYMPTOMES:
             json_data["symptomes"].append(json.loads(item.to_json()))
-        for item in self.TRAITEMENTS:
-            json_data["traitements"].append(json.loads(item.to_json()))
         for item in self.PRATICIENS:
             json_data["praticiens"].append(json.loads(item.to_json()))
         for item in self.CONSULTATION_MALADIES:
@@ -189,6 +201,44 @@ class ServiceData:
 
         return json_data
 
+    def json_maladies(self):
+        json_data = {
+            "maladies": []
+        }
+
+        for item in self.MALADIES:
+
+            data = {
+                "id": item.id,
+                "libelle": item.libelle,
+                "description": item.description,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at
+            }
+
+            json_data['maladies'].append(data)
+
+        return json_data
+
+    def json_symtomes(self):
+        json_data = {
+            "symptomes": []
+        }
+
+        for item in self.SYMPTOMES:
+
+            data = {
+                "id": item.id,
+                "libelle": item.libelle,
+                "description": item.description,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at
+            }
+
+            json_data['symptomes'].append(data)
+
+        return json_data
+
     def json_consultations(self, query={"patient":None, "praticien": None, "type":None, "start":None, "end":None}):
         json_data = {
             "consultations": []
@@ -259,6 +309,104 @@ class ServiceData:
 
         return json_data
 
+
+    def json_maladies_symtomes(self, query={"maladie":None, "symptome": None, "win":None, "start":None, "end":None}):
+        json_data = {
+            "patients": []
+        }
+
+        consultations_data = []
+        consultations_maladies = self.CONSULTATION_MALADIES
+
+        if query['maladie'] != None and query['maladie'] != '0':
+            consultations_maladies = self.get_l(int(query['maladie']), 'maladie_id', consultations_maladies)
+            print(1,consultations_maladies)
+        if query['symptome'] != None and query['symptome'] != '0':
+            consultations_maladies = self.get_ls(int(query['symptome']), 'symptomes', consultations_maladies)
+            print(2,consultations_maladies)
+        if query['win'] != None and query['win'] != '0':
+            if query['win'] != '1':
+                consultations_maladies = self.get_l(True, 'traitement_reussi', consultations_maladies)
+            else: consultations_maladies = self.get_l(False, 'traitement_reussi', consultations_maladies)
+            print(3,consultations_maladies)
+
+        for item in consultations_maladies:
+            tmp = self.get(item.consultation_id, "id", self.CONSULTATIONS)
+            if tmp != None:
+                consultations_data.append(tmp)
+        print("TT", consultations_data)
+
+        if query['start'] != None:
+            consultations_data = self.date_filter(query['start'], 'created_at', "gte", consultations_data)
+            print(4,consultations_data)
+        if query['end'] != None:
+            consultations_data = self.date_filter(query['end'], 'created_at', "lte", consultations_data)
+            print(5,consultations_data)
+
+        for item in consultations_data:
+            type = self.get_element(item.type_id, self.TYPE_CONSULTATIONS)
+            praticien = self.get_element(item.praticien_id, self.PRATICIENS)
+            p = self.get_element(item.patient_id, self.PATIENTS)
+
+            patient = {
+                "id": p.id,
+                "nom": p.nom,
+                "prenom": p.prenom,
+                "sexe": p.sexe,
+                "date_naissance": p.date_naissance,
+                "group_sanguin": p.group_sanguin,
+                "consultations": [],
+                "created_at": p.created_at,
+                "updated_at": p.updated_at
+            }
+
+            data = {
+                "id": item.id,
+                "type": type.libelle if type != None else None,
+                "praticien": "{} {}".format(praticien.nom, praticien.prenom),
+                "observation": item.observation,
+                "created_at": item.created_at,
+                "updated_at": item.updated_at,
+                "maladies": [],
+                "symptomes": []
+            }
+
+            symptomes_consultation = self.get_elements(item.symptomes, self.SYMPTOMES)
+            for symptome_item in symptomes_consultation:
+                symptome = {
+                    "id": symptome_item.id,
+                    "libelle": symptome_item.libelle,
+                    "description": symptome_item.description,
+                    "created_at": symptome_item.created_at,
+                    "updated_at": symptome_item.updated_at
+                }
+                data['symptomes'].append(symptome)
+
+            maladies_consultation = self.foreign_elements(item.id, 'consultation_id',
+                                                          self.CONSULTATION_MALADIES)
+            for maladie_item in maladies_consultation:
+                __maladie = self.get_element(maladie_item.maladie_id, self.MALADIES)
+                maladie = {
+                    "id": __maladie.id,
+                    "libelle": __maladie.libelle,
+                    "description": __maladie.description,
+                    "debut_traitement": maladie_item.debut_traitement,
+                    "fin_traitement": maladie_item.fin_traitement,
+                    "traitement_reussi": maladie_item.traitement_reussi,
+                    "created_at": __maladie.created_at,
+                    "updated_at": __maladie.updated_at
+                }
+                data['maladies'].append(maladie)
+
+            tmp = self.gett(patient['id'], "id", json_data['patients'])
+            if tmp != None:
+                index = json_data['patients'].index(tmp)
+                json_data['patients'][index]['consultations'].append(data)
+            else:
+                patient['consultations'].append(data)
+                json_data['patients'].append(patient)
+
+        return json_data
 
 
     def deserialize_output(self, output="FILE", path=base.OUTPUT_FILE):

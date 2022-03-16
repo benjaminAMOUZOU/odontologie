@@ -11,13 +11,9 @@ class Maladie:
         self.updated_at = updated_at
 
         self.symptomes = list()
-        self.traitements = list()
 
     def set_simptomes(self, elements):
         self.symptomes = elements
-
-    def set_traitements(self, elements):
-        self.traitements = elements
 
     def __str__(self):
         return json.dumps(self.__dict__, indent=4)

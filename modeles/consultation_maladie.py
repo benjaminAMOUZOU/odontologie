@@ -12,7 +12,6 @@ class ConsultationMaladie:
 
         self.consultation_id = 0
         self.maladie_id = 0
-        self.traitement_id = 0
 
         self.created_at = created_at
         self.updated_at = updated_at
@@ -22,10 +21,9 @@ class ConsultationMaladie:
     def set_simptomes(self, elements):
         self.symptomes = elements
 
-    def foreign(self, consultation_id, maladie_id, traitement_id):
+    def foreign(self, consultation_id, maladie_id):
         self.consultation_id = consultation_id
         self.maladie_id = maladie_id
-        self.traitement_id = traitement_id
 
     def __str__(self):
         return json.dumps(self.__dict__, indent=4)
