@@ -16,7 +16,7 @@ La commande pour l'installation des packages est ```pip install -r ./requirement
 L'exécution du programme est disponible en deux modes: _le mode web_ et _le mode console_.
 
 #### 3-1- Le mode web
-Exécutez la commande ```python3 app.py``` ou ```python app.py``` pour lancer l'interface web. Vous obtiendrez un lien qui, ouvert dans le navigateur
+Exécutez la commande ```python3 web.py``` ou ```python web.py``` pour lancer l'interface web. Vous obtiendrez un lien qui, ouvert dans le navigateur
 présente l'interface d'accueil permettant d'uploader un fichier csv.
 
 <p align="center">
@@ -53,7 +53,7 @@ Ci-dessous les répertoires essentiels et leurs contenus.
 * *__db__*: contient le fichier intermédiaire *db_cpoo.json*. *db_cpoo.json* est la structure intermédiaire(listes de données avec id) manipulée par notre programme ;
 * *__static__*: contient le fichier _cpoo.json_ et les dossiers _css, js, assets_(fichiers utilisés pour l'interface web). 
 Le fichier *__cpoo.json__*: est la structure finale de sortie de notre programme ;
-* *__uploads__*: contient le fichier ou les fichiers csv envoyer via l'interface web de la page d'accueil ;
+* *__uploads__*: contient le fichier ou les fichiers csv envoyer via l'interface web de la page d'accueil.Chaque ligne dans le fichier csv représente une consultation ;
 * *__configs__*: contient le fichier _base.py_ dans lequel sont configurés les emplacements des différents fichiers de stockages ;
 * *__structs__*: contient les programmes pour la lecture et l'écriture des fichiers (csv, json) ;
 * *__console__*: contient les programmes pour la console ;
