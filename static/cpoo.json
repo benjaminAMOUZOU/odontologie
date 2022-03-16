@@ -63,6 +63,62 @@
                     "updated_at": "09-03-2022 14:18:56",
                     "maladies": [],
                     "symptomes": []
+                },
+                {
+                    "id": 8,
+                    "type": "NORMAL",
+                    "praticien": "KLOUYIBO Komi",
+                    "observation": "",
+                    "created_at": "02/16/2022",
+                    "updated_at": "16-03-2022 03:32:52",
+                    "maladies": [
+                        {
+                            "id": 1,
+                            "libelle": "Gingivite",
+                            "description": "",
+                            "debut_traitement": "16/02/2022",
+                            "fin_traitement": "",
+                            "traitement_reussi": false,
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ],
+                    "symptomes": [
+                        {
+                            "id": 1,
+                            "libelle": "Maux de t\u00eate",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        },
+                        {
+                            "id": 2,
+                            "libelle": "Inflammation de la gencive",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "type": "REVISITE",
+                    "praticien": "KLOUYIBO Komi",
+                    "observation": "Gingivite en regression",
+                    "created_at": "02/23/2022",
+                    "updated_at": "16-03-2022 03:32:52",
+                    "maladies": [],
+                    "symptomes": []
+                },
+                {
+                    "id": 10,
+                    "type": "REVISITE",
+                    "praticien": "KLOUYIBO Komi",
+                    "observation": "Gingivite compl\u00e8tement gu\u00e9rie",
+                    "created_at": "02/28/2022",
+                    "updated_at": "16-03-2022 03:32:52",
+                    "maladies": [],
+                    "symptomes": []
                 }
             ],
             "created_at": "09-03-2022 14:18:56",
@@ -112,6 +168,45 @@
                     "observation": "Carie dentaire obtur\u00e9e",
                     "created_at": "03/08/2022",
                     "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [],
+                    "symptomes": []
+                },
+                {
+                    "id": 11,
+                    "type": "NORMAL",
+                    "praticien": "SODOKIN Beauty",
+                    "observation": "",
+                    "created_at": "03/01/2022",
+                    "updated_at": "16-03-2022 03:32:52",
+                    "maladies": [
+                        {
+                            "id": 2,
+                            "libelle": "Carie dentaire",
+                            "description": "",
+                            "debut_traitement": "01/03/2022",
+                            "fin_traitement": "",
+                            "traitement_reussi": false,
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ],
+                    "symptomes": [
+                        {
+                            "id": 3,
+                            "libelle": "",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "type": "REVISITE",
+                    "praticien": "SODOKIN Beauty",
+                    "observation": "Carie dentaire obtur\u00e9e",
+                    "created_at": "03/08/2022",
+                    "updated_at": "16-03-2022 03:32:52",
                     "maladies": [],
                     "symptomes": []
                 }
@@ -177,6 +272,59 @@
                     "observation": "Pr\u00e9sence de s\u00e9qu\u00e8lles",
                     "created_at": "04/21/2022",
                     "updated_at": "09-03-2022 14:18:56",
+                    "maladies": [],
+                    "symptomes": []
+                },
+                {
+                    "id": 13,
+                    "type": "NORMAL",
+                    "praticien": "AGBANOUVI Kodjo",
+                    "observation": "",
+                    "created_at": "04/10/2022",
+                    "updated_at": "16-03-2022 03:32:52",
+                    "maladies": [
+                        {
+                            "id": 3,
+                            "libelle": "Abc\u00e8s dentaire",
+                            "description": "",
+                            "debut_traitement": "04/10/2022",
+                            "fin_traitement": "",
+                            "traitement_reussi": false,
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ],
+                    "symptomes": [
+                        {
+                            "id": 4,
+                            "libelle": "Gencive rouge et gonfl\u00e9e",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        },
+                        {
+                            "id": 5,
+                            "libelle": "Sensation de chaleur",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        },
+                        {
+                            "id": 6,
+                            "libelle": "Saignements",
+                            "description": "",
+                            "created_at": "09-03-2022 14:18:56",
+                            "updated_at": "09-03-2022 14:18:56"
+                        }
+                    ]
+                },
+                {
+                    "id": 14,
+                    "type": "REVISITE",
+                    "praticien": "AGBANOUVI Kodjo",
+                    "observation": "Pr\u00e9sence de s\u00e9qu\u00e8lles",
+                    "created_at": "04/21/2022",
+                    "updated_at": "16-03-2022 03:32:52",
                     "maladies": [],
                     "symptomes": []
                 }

@@ -124,6 +124,27 @@ def consultations():
 
     return render_template('consultation.html', data=data, types=types['types'], praticiens=praticiens['praticiens'], patients=patients['patients'])
 
+
+@app.route('/maladies-symtomes', methods=['GET', 'POST'])
+def maladies_symptomes():
+    service = ServiceData.get_instance()
+    data = service.deserialize_output(output="JSON")
+    maladies = service.json_maladies()
+    symptomes = service.json_symtomes()
+    if request.method == 'POST':
+        daterange = request.form.get("daterange")
+        start = daterange.split('-')[0].strip()
+        end = daterange.split('-')[1].strip()
+        maladie = request.form.get("maladie")
+        symptome = request.form.get("symptome")
+        win = request.form.get("wine")
+
+        query={"maladie": maladie, "symptome": symptome, "win": win, "start":start, "end":end}
+        print(query)
+        data = service.json_maladies_symtomes(query)
+
+    return render_template('maladie_symptome.html', data=data, maladies=maladies['maladies'], symptomes=symptomes['symptomes'])
+
 if __name__=="__main__":
     app.secret_key = 'clé secrete'
     app.config['SESSION_TYPE'] = 'filesystem'
